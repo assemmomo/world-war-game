@@ -1,0 +1,2027 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<script>document.documentElement.setAttribute('lang','ar');document.documentElement.setAttribute('dir','rtl');</script>
+<title>الخط الحديدي — ميريديان</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Reem+Kufi:wght@500;700&display=swap">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#efe9dc;--panel:#f8f4ea;--ink:#1b2a33;--muted:#6a7479;--line:#d9cfb8;--sea:#c9dcdf;--land:#bdb6a1;--land-hover:#a9a28c;--reach:#d6b469;--border:#f8f4ea;
+--own:#0f766e;--own-ink:#fff;--gold:#a87a1f;--good:#1f7a4d;--mid:#6a7479;--warn:#9a6a0b;--bad:#b83b1d;--el:56%;
+--display:'Reem Kufi','Cairo',sans-serif;--body:'Cairo',system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1317;--panel:#101d24;--ink:#e8efe9;--muted:#86999d;--line:#223840;--sea:#071014;--land:#2c3d44;--land-hover:#3a4f58;--reach:#7d6226;--border:#0a1317;--own:#2dbfa6;--own-ink:#04211c;--gold:#e2b250;--good:#4cc38a;--mid:#86999d;--warn:#e0b341;--bad:#f08a4b;--el:44%;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a1317;--panel:#101d24;--ink:#e8efe9;--muted:#86999d;--line:#223840;--sea:#071014;--land:#2c3d44;--land-hover:#3a4f58;--reach:#7d6226;--border:#0a1317;--own:#2dbfa6;--own-ink:#04211c;--gold:#e2b250;--good:#4cc38a;--mid:#86999d;--warn:#e0b341;--bad:#f08a4b;--el:44%;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+[hidden]{display:none!important}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.55 var(--body);display:flex;flex-direction:column;gap:10px;padding-block:12px;padding-left:max(14px,env(safe-area-inset-left,0px));padding-right:max(14px,env(safe-area-inset-right,0px))}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+h1,h2,h3{font-family:var(--display);font-weight:700;margin:0;text-wrap:balance}
+.top{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
+.brand h1{font-size:28px;line-height:1.1;color:var(--gold)}
+.brand span{display:block;color:var(--muted);font-size:12px}
+#hud{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px;margin-inline-start:auto}
+.pick{margin-inline-start:auto;color:var(--gold);font-weight:700}
+.rescard{display:flex;align-items:center;gap:12px;padding:6px 16px;border-radius:12px;background:linear-gradient(135deg,var(--own),color-mix(in srgb,var(--own) 55%,#000));color:var(--own-ink);box-shadow:0 2px 10px color-mix(in srgb,var(--own) 35%,transparent)}
+.rescard svg{width:30px;height:30px;flex:none}
+.rescard small{display:block;font-size:11px;opacity:.85;line-height:1.2}
+.rescard b{font:700 26px/1.1 var(--display);font-variant-numeric:tabular-nums}
+.rescard em{font-style:normal;font-size:12px;font-weight:700;margin-inline-start:6px;background:#0003;padding:1px 8px;border-radius:99px}
+.clock,.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:6px 12px;display:flex;flex-direction:column;justify-content:center}
+.clock small,.stat small{font-size:11px;color:var(--muted);line-height:1.2}
+.clock b,.stat b{font:700 16px/1.3 var(--body)}
+.spd{display:flex;gap:4px;margin-top:3px}
+.spd button{border:1px solid var(--line);background:var(--bg);border-radius:6px;min-width:34px;font-size:12px;padding:1px 6px}
+.spd button.on{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn{border:1px solid var(--line);background:var(--panel);padding:7px 14px;border-radius:8px;font-weight:600;transition:border-color .15s,background .15s}
+.btn:hover:not(:disabled){border-color:var(--gold)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.on{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn.primary{background:var(--own);border-color:var(--own);color:var(--own-ink);width:100%;padding:10px 14px;font-size:15px;font-weight:700}
+.btn.danger{border-color:var(--bad);color:var(--bad)}
+.btn.primary:hover:not(:disabled){filter:brightness(1.08)}
+#reset{font-size:12px;padding:5px 10px}
+.stage{flex:1;min-height:0;display:grid;grid-template-columns:400px minmax(0,1fr);border:1px solid var(--line);background:var(--panel);border-radius:14px;overflow:hidden}
+#mapwrap{position:relative;min-width:0;min-height:0;background:radial-gradient(ellipse at 50% 40%,color-mix(in srgb,var(--sea) 80%,#fff 20%),var(--sea));overflow:hidden}
+#map{display:block;width:100%;height:100%;touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none}
+#map:active{cursor:grabbing}
+.c{fill:var(--land);stroke:var(--border);stroke-width:.6px;vector-effect:non-scaling-stroke;stroke-linejoin:round;transition:fill .6s ease}
+.c:hover{fill:var(--land-hover)}
+.c.emp:hover{filter:brightness(1.15)}
+.c.rch{stroke:var(--gold);stroke-width:1.3px}
+.c.rch:not(.emp){fill:var(--reach)}
+.c.own,.c.own:hover{fill:var(--own)}
+.c.sel{stroke:var(--ink);stroke-width:2px}
+.zoom{position:absolute;left:10px;top:10px;display:flex;flex-direction:column;gap:4px}
+.zoom button{width:34px;height:34px;border:1px solid var(--line);background:var(--panel);border-radius:8px;font-size:17px;line-height:1;padding:0}
+.zoom button:hover{border-color:var(--gold)}
+.zoom #relToggle{font-size:11px;line-height:1.2;width:76px;height:auto;min-height:34px;padding:5px 4px;white-space:normal}
+.zoom #relToggle.on{background:var(--gold);border-color:var(--gold);color:#fff}
+#tip{position:absolute;left:0;top:0;pointer-events:none;background:var(--ink);color:var(--bg);padding:5px 10px;border-radius:8px;font-size:12px;display:flex;flex-direction:column;max-width:180px;z-index:3}
+#tip span{opacity:.75;font-size:11px}
+.legend{position:absolute;right:10px;bottom:10px;display:flex;gap:12px;font-size:11px;color:var(--muted);background:color-mix(in srgb,var(--panel) 88%,transparent);padding:4px 10px;border-radius:8px;flex-wrap:wrap}
+.legend i{display:inline-block;width:10px;height:10px;margin-inline-end:5px;border-radius:3px;vertical-align:-1px;background:var(--land)}
+.legend i.r{background:var(--own)}.legend i.t{background:var(--reach)}.legend i.e{background:hsl(210 42% var(--el))}
+body[data-phase="select"] .legend .play{display:none}
+#status,#win{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;background:color-mix(in srgb,var(--sea) 90%,transparent);z-index:4}
+#status>div,#win>div{max-width:380px;display:flex;flex-direction:column;gap:10px;align-items:center}
+#status h2,#win h2{font-size:28px;color:var(--gold)}
+#status p,#win p{margin:0;color:var(--muted)}
+#status .btn,#win .btn{width:auto}
+.panel{border-inline-end:1px solid var(--line);overflow-y:auto;min-height:0;display:flex;flex-direction:column}
+.panel>*{padding:14px 16px}
+#card{display:flex;flex-direction:column;gap:12px;border-bottom:1px solid var(--line)}
+#card h2{font-size:28px;line-height:1.1}
+#card .head{display:flex;flex-direction:column;gap:8px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11.5px;font-weight:600;padding:1px 9px;border:1px solid currentColor;border-radius:99px;white-space:nowrap}
+.tag.good{color:var(--good)}.tag.mid{color:var(--mid)}.tag.warn{color:var(--warn)}.tag.bad{color:var(--bad)}
+.tag.own{color:var(--own-ink);background:var(--own);border-color:var(--own)}
+section h3,#eco h3,#listWrap h3,#logWrap h3{font-size:15px;color:var(--gold);margin-bottom:4px}
+dl{margin:0}
+.kv{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:4px 0;border-bottom:1px dotted var(--line)}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0;font-weight:600;font-variant-numeric:tabular-nums;display:flex;align-items:center;gap:6px;flex-wrap:wrap;min-width:0}
+.kv small{color:var(--muted);font-size:11px;font-weight:400}
+.bar{display:inline-block;width:84px;height:7px;background:var(--line);border-radius:4px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--gold)}
+.muted{color:var(--muted)}p.muted{margin:0}
+.hint{margin:6px 0 0;font-size:12px;color:var(--muted)}
+.rels{list-style:none;margin:0;padding:0;max-height:240px;overflow-y:auto}
+.rels li{display:grid;grid-template-columns:minmax(0,1fr) 40px 54px 92px;gap:8px;align-items:center;padding:4px 0;border-bottom:1px dotted var(--line)}
+.nb{background:none;border:0;padding:0;text-align:start;font-weight:600;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px}
+.nb:hover{text-decoration-color:var(--gold)}
+.nb em{font-style:normal;color:var(--own);font-size:11px}
+.sea{font-size:10px;color:var(--muted)}
+.rbar{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.rbar i{display:block;height:100%;background:var(--mid)}
+.rbar.good i{background:var(--good)}.rbar.warn i{background:var(--warn)}.rbar.bad i{background:var(--bad)}
+.rl{font-size:12px;font-weight:700;white-space:nowrap}.rl span{color:var(--muted);font-weight:400}
+.rl.good{color:var(--good)}.rl.warn{color:var(--warn)}.rl.bad{color:var(--bad)}.rl.mid{color:var(--mid)}
+#act,#eco{display:flex;flex-direction:column;gap:8px;border-bottom:1px solid var(--line)}
+#act:empty,#eco:empty{display:none}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:6px}.btns .wide{grid-column:1/-1}
+.taxes{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}.taxes .btn{padding:5px 2px;font-size:12.5px;text-align:center}
+.slider{display:flex;justify-content:space-between;font-weight:600}
+input[type=range]{width:100%;accent-color:var(--own)}
+.odds{font-size:13px;display:flex;flex-direction:column;gap:4px}
+.result{margin:0;padding:8px 10px;border-inline-start:3px solid var(--gold);background:color-mix(in srgb,var(--gold) 12%,transparent);border-radius:6px}
+#listWrap{display:flex;flex-direction:column;gap:8px}
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.controls input,.controls select{font:inherit;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:6px 8px;min-width:0}
+.controls input{grid-column:1/-1}.controls select:disabled{opacity:.5}
+#list{list-style:none;margin:0;padding:0;max-height:260px;overflow-y:auto;border:1px solid var(--line);background:var(--bg);border-radius:8px}
+.row{display:flex;align-items:center;gap:8px;width:100%;background:none;border:0;border-bottom:1px solid var(--line);padding:6px 10px;text-align:start}
+.row:hover{background:color-mix(in srgb,var(--gold) 10%,transparent)}
+.row.on{background:color-mix(in srgb,var(--gold) 20%,transparent)}
+.row .n{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .v{font-size:12px;color:var(--muted)}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--land);flex:none}
+.dot.own{background:var(--own)}.dot.reach{background:var(--reach)}
+.empty{padding:10px}
+#log{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:14px}
+#log li{display:flex;gap:8px;padding-inline-start:8px;border-inline-start:3px solid var(--line)}
+#log li span{color:var(--muted);font-size:11px;flex:none;padding-top:2px;min-width:42px}
+#log li.t-good{border-color:var(--good)}#log li.t-bad{border-color:var(--bad)}#log li.t-war{border-color:var(--warn)}
+body[data-phase="select"] #eco{display:none}
+#toasts{position:fixed;left:max(12px,env(safe-area-inset-left,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:6px;z-index:20;max-width:min(340px,calc(100vw - 24px));pointer-events:none}
+.toast{padding:8px 14px;border-radius:10px;font-size:13px;font-weight:600;background:var(--ink);color:var(--bg);border-inline-start:4px solid var(--gold);box-shadow:0 4px 16px #0004;animation:tin .25s ease-out;transition:opacity .4s,transform .4s}
+.toast.good{border-color:var(--good)}.toast.bad{border-color:var(--bad)}.toast.war{border-color:var(--warn)}
+.toast.alert{background:#c4161c;color:#fff;border-color:#fff;font-size:14px;font-weight:800;animation:tin .25s ease-out,pulse 1s ease-in-out 3}
+.toast.out{opacity:0;transform:translateX(-20px)}
+@keyframes tin{from{opacity:0;transform:translateX(-20px)}}
+@keyframes pulse{50%{box-shadow:0 0 0 6px #c4161c55}}
+#log li.t-alert{border-color:#c4161c;color:#c4161c;font-weight:700}
+.stat.flash b{color:var(--gold);transform:scale(1.25);transition:transform .3s}
+.stat b{transition:transform .3s;transform-origin:center}
+.reqs{display:flex;flex-direction:column;gap:4px}
+.req{display:flex;justify-content:space-between;gap:8px;padding:4px 10px;border-radius:8px;font-size:12.5px;border:1px solid currentColor}
+.req.ok{color:var(--good)}.req.no{color:var(--bad)}
+@media (prefers-reduced-motion:reduce){.toast{animation:none}}
+.boom{fill:#ff8a3d55;stroke:#ff5a36;stroke-width:2;vector-effect:non-scaling-stroke;transform-box:fill-box;transform-origin:center;animation:boom .65s ease-out forwards}
+@keyframes boom{from{transform:scale(.15);opacity:1}to{transform:scale(1);opacity:0}}
+.c.hit{animation:hit .45s ease-in-out 3}
+@keyframes hit{50%{filter:brightness(1.9)}}
+#offers{position:fixed;top:50%;left:50%;right:auto;transform:translate(-50%,-50%);z-index:999;width:min(560px,calc(100vw - 28px));display:flex;flex-direction:column;gap:12px;max-height:min(80vh,680px);overflow:auto;padding:18px;background:var(--panel);border:1px solid var(--gold);border-radius:18px;box-shadow:0 22px 70px #000b}
+#offers:empty{display:none!important}
+#offers h3{display:block;margin:0;padding:0 0 8px;font-size:22px;text-align:center;border-bottom:1px solid var(--line)}
+.offer{display:flex;flex-direction:column;gap:14px;background:var(--panel2,var(--panel));border:1px solid var(--gold);border-inline-start:5px solid var(--gold);border-radius:14px;padding:20px;font-size:18px;box-shadow:0 12px 36px #0008;animation:oin .3s ease-out}
+.offer b{color:var(--gold)}
+.offer .oa{display:flex;gap:12px}.offer .btn{flex:1;padding:12px 16px;font-size:16px}
+@keyframes oin{from{opacity:0;transform:translateY(-12px)}}
+#battle{position:fixed;inset:0;z-index:30;display:flex;align-items:center;justify-content:center;background:#0009;backdrop-filter:blur(3px);padding:16px}
+#battle[hidden]{display:none}
+.bcard{width:min(400px,100%);background:var(--panel);border:2px solid var(--good);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 40px #0007}
+.bcard.lose{border-color:var(--bad)}
+.bcard h2{font-size:30px;color:var(--good)}.bcard.lose h2{color:var(--bad)}
+.bcard p{margin:0;color:var(--muted)}
+@media (max-width:880px){html,body{height:auto;min-height:100%}.stage{grid-template-columns:minmax(0,1fr);flex:none}#mapwrap{height:52vh;min-height:300px;order:-1}.panel{border-inline-end:0;border-top:1px solid var(--line);overflow:visible}#hud{margin-inline-start:0;width:100%}}
+@media (prefers-reduced-motion:reduce){.c{transition:none}}
+
+.rels li.gh{display:block;font-weight:700;color:var(--gold);font-size:12.5px;padding:8px 0 3px;border-bottom:1px solid var(--line)}
+.rels li.gh:first-child{padding-top:0}
+.evbtn{position:relative}
+.badge{position:absolute;top:-7px;inset-inline-end:-7px;min-width:19px;height:19px;padding:0 5px;border-radius:99px;background:#c4161c;color:#fff;font-size:11px;font-weight:800;line-height:19px;text-align:center}
+#events{position:fixed;inset:0;z-index:40;display:flex;align-items:center;justify-content:center;background:#000a;backdrop-filter:blur(3px);padding:16px}
+#events[hidden]{display:none}
+.ecard{width:min(660px,100%);max-height:calc(100vh - 32px);background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:12px;box-shadow:0 10px 40px #0007}
+.ehead{display:flex;gap:12px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap}
+.ehead h2{font-size:26px;color:var(--gold)}
+.ehead p{margin:2px 0 0;font-size:12.5px}
+.ehead .btn.primary{width:auto}
+.efilter{display:flex;gap:6px;flex-wrap:wrap}
+.efilter .btn{padding:4px 14px;font-size:13px}
+.ecard #log{overflow-y:auto;min-height:120px;flex:1;padding-inline-end:4px}
+.lab{font-family:var(--body);font-weight:600;fill:var(--ink);opacity:.8;stroke:var(--bg);stroke-linejoin:round;paint-order:stroke;pointer-events:none;user-select:none;-webkit-user-select:none}
+.lab.emp{font-family:var(--display);font-weight:700;opacity:.96}
+
+:root{--display:'Cairo',system-ui,sans-serif}
+.brand h1,.pick,#status h2,#win h2,section h3,#eco h3,#listWrap h3,#logWrap h3,.ehead h2,.offer b,.rels li.gh,.bcard h2{color:var(--ink)!important;font-family:var(--body)!important;font-weight:700}
+.smk{fill:#ffb347aa;transform-box:fill-box;transform-origin:center;animation:smk .6s ease-out forwards}@keyframes smk{to{transform:scale(2.4);opacity:0}}
+#menu,#tut{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;background:color-mix(in srgb,var(--bg) 94%,#000);padding:16px}
+#tut{z-index:70}
+.mcard{width:min(440px,100%);display:flex;flex-direction:column;gap:12px;text-align:center}
+.mcard h1{font-size:38px}.mcard p{margin:0;color:var(--muted)}
+.mcard .btn{width:100%;padding:12px;font-size:16px}.mcard .btn small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.tcard{width:min(520px,100%);background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:12px}
+.tcard h2{font-size:24px}.tcard p{margin:0;line-height:1.8}.tnav{display:flex;gap:8px;justify-content:space-between;align-items:center}
+.prot{border-top:1px solid var(--line);padding-top:8px;display:flex;flex-direction:column;gap:6px}
+.zn{cursor:pointer}.zn circle{fill:#2f7fb0;stroke:#fff;stroke-width:1.6;vector-effect:non-scaling-stroke}.zn text{fill:#fff;font-size:6.5px;text-anchor:middle;dominant-baseline:central;pointer-events:none;font-family:var(--body)}
+.zn.own circle{fill:var(--own)}.zn.sel circle{stroke:var(--ink);stroke-width:3}.zn .ring{fill:none;stroke:#2f7fb0;stroke-opacity:.55;stroke-width:1.4;vector-effect:non-scaling-stroke}
+/* ---- حركة الأحداث على الخريطة ---- */
+.zi{transform-box:fill-box;transform-origin:center}
+.zn .ring{transform-box:fill-box;transform-origin:center;animation:zring 2.6s ease-out infinite}
+@keyframes zring{from{transform:scale(1);opacity:.75}to{transform:scale(2.2);opacity:0}}
+.zi.fresh{animation:zpop .95s cubic-bezier(.2,1.6,.4,1) both}
+@keyframes zpop{from{transform:scale(0) rotate(-140deg);opacity:0}to{transform:scale(1) rotate(0);opacity:1}}
+.zi.gone{animation:zgone .75s ease-in forwards}
+@keyframes zgone{to{transform:scale(0) rotate(170deg);opacity:0}}
+.zi.cap{animation:zcap .85s ease-out}
+@keyframes zcap{40%{transform:scale(1.7)}}
+.fxring{fill:none;opacity:0;transform-box:fill-box;transform-origin:center;animation:fxring 1.3s ease-out forwards}
+@keyframes fxring{from{transform:scale(.15);opacity:.95}to{transform:scale(1);opacity:0}}
+.fxflash{pointer-events:none;stroke:#fff;stroke-opacity:.9;opacity:0;animation:fxflash 1.7s ease-out forwards}
+@keyframes fxflash{0%{opacity:0}15%{opacity:.95}45%{opacity:.5}60%{opacity:.8}100%{opacity:0}}
+.fxarc{fill:none;stroke-linecap:round;stroke-dasharray:1 1;stroke-dashoffset:1;animation:fxdraw 2.3s ease-out forwards}
+@keyframes fxdraw{0%{stroke-dashoffset:1;opacity:1}45%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+.fxico{opacity:0;text-anchor:middle;dominant-baseline:central;transform-box:fill-box;transform-origin:center;animation:fxico 2.1s ease-out forwards}
+@keyframes fxico{0%{transform:scale(0);opacity:0}25%{transform:scale(1.4);opacity:1}60%{transform:scale(1);opacity:1}100%{transform:scale(1) translateY(-35%);opacity:0}}
+@media (prefers-reduced-motion:reduce){.zn .ring,.zi.fresh,.zi.cap{animation:none}}
+#rel path{fill:none;stroke-linecap:round;stroke-dasharray:1 1;stroke-dashoffset:0;animation:rldraw .9s ease-out both}
+@keyframes rldraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+#rel circle{animation:rldot .9s ease-out both}
+@keyframes rldot{0%,60%{opacity:0}100%{opacity:1}}
+.legend i.lg,.legend i.lr{height:3px;border-radius:2px;width:16px;vertical-align:3px}.legend i.lg{background:#3ecf8e}.legend i.lr{background:#e5484d}
+@media (prefers-reduced-motion:reduce){#rel path,#rel circle{animation:none}}
+#notice{position:fixed;inset:0;z-index:35;display:flex;align-items:center;justify-content:center;background:#0008;padding:16px}#notice[hidden]{display:none}
+.ncard{width:min(380px,100%);background:var(--panel);border:2px solid var(--warn);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px;box-shadow:0 10px 40px #0007}
+.ncard h2{font-size:20px}.ncard p{margin:0;line-height:1.7}
+</style>
+<header class="top">
+  <div class="brand"><h1>الخط الحديدي</h1><span>لعبة الهيمنة على العالم</span></div>
+  <div class="pick" id="pick">اختر دولة البداية من الخريطة</div>
+  <div id="hud" hidden>
+    <div class="rescard" title="الموارد هي عملة الغزو">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 22l4-10h16l4 10z" fill="currentColor" opacity=".9"/><path d="M8 12l3-6h10l3 6z" fill="currentColor" opacity=".6"/><rect x="3" y="22" width="26" height="4" rx="1" fill="currentColor"/></svg>
+      <div><small>الموارد</small><b id="hRes">0</b><em id="hRate">+0 / يوم</em></div>
+    </div>
+    <div class="clock"><small>التاريخ</small><b id="hDate"></b><div class="spd" id="spd"><button data-s="0" aria-label="إيقاف مؤقت">⏸</button><button data-s="1">×1</button><button data-s="2">×2</button><button data-s="4">×4</button></div></div>
+    <div class="stat army"><small>حجم الجيش</small><b id="hArmy"></b></div>
+    <div class="stat"><small>مؤشر قوتك</small><b id="hPow"></b></div>
+    <div class="stat" title="يُمنح عند تجاوز الموارد 200,000"><small>السلاح النووي</small><b id="hNuke"></b></div>
+    <div class="stat"><small>الأراضي</small><b id="hTerr"></b></div>
+  </div>
+  <button class="btn evbtn" id="evBtn" type="button" disabled>📰 الأحداث العالمية<span class="badge" id="evBadge" hidden>0</span></button>
+  <button class="btn" id="save" type="button" disabled>💾 حفظ التقدم</button>
+  <button class="btn" id="reset" type="button">إعادة اللعب</button>
+</header>
+<main class="stage">
+  <aside class="panel">
+    <div id="card"></div>
+    <div id="act"></div>
+    <div id="eco"></div>
+  </aside>
+  <section id="mapwrap" aria-label="خريطة العالم">
+    <svg id="map" role="img" aria-label="خريطة سياسية للعالم. اضغط على دولة لعرض بياناتها."><g id="land"></g><g id="labels" pointer-events="none"></g><g id="zones"></g><g id="rel" pointer-events="none"></g><g id="fx" pointer-events="none"></g></svg>
+    <div class="zoom"><button id="zin" type="button" aria-label="تكبير">+</button><button id="zout" type="button" aria-label="تصغير">&minus;</button><button id="zreset" type="button" aria-label="إعادة العرض">&#8634;</button><button id="relToggle" type="button" aria-pressed="true" class="on">إخفاء العلاقات</button></div>
+    <div class="legend"><span><i></i>مستقلة</span><span class="play"><i class="r"></i>أراضيك</span><span class="play"><i class="t"></i>في المتناول</span><span class="play"><i class="e"></i>إمبراطوريات منافسة</span><span class="play"><i class="lg"></i>حلفاء الدولة المحددة</span><span class="play"><i class="lr"></i>أعداؤها</span></div>
+    <div id="tip" hidden></div>
+    <div id="status"><div><p>جارٍ تحميل خريطة العالم…</p></div></div>
+    <div id="win" hidden></div>
+  </section>
+</main>
+<div id="menu" hidden></div><div id="tut" hidden></div>
+<div id="toasts" aria-live="polite"></div>
+<div id="offers" aria-live="polite"></div>
+<div id="battle" hidden></div><div id="notice" hidden></div>
+<div id="events" hidden><div class="ecard" role="dialog" aria-modal="true" aria-labelledby="evTitle"><div class="ehead"><div><h2 id="evTitle">الأحداث العالمية</h2><p class="muted">اللعبة متوقفة مؤقتاً ما دامت هذه الصفحة مفتوحة.</p></div><button class="btn primary" id="evClose" type="button">العودة إلى اللعبة</button></div><div class="efilter" id="evFilter"><button class="btn on" type="button" data-f="all">الكل</button><button class="btn" type="button" data-f="war">الحروب</button><button class="btn" type="button" data-f="dip">الدبلوماسية</button><button class="btn" type="button" data-f="react">ردود الفعل</button></div><ul id="log"></ul></div></div>
+<script>
+// code: [gdp $bn, pop millions, active troops thousands, nuclear (0/1), tech 1-10]
+var DATA = {
+US:[29000,335,1330,1,10],CN:[18700,1410,2035,1,9],JP:[4000,124,247,0,9],DE:[4700,84,183,0,9],IN:[3900,1430,1450,1,7],
+GB:[3600,68,150,1,9],FR:[3200,68,203,1,9],IT:[2400,59,165,0,8],BR:[2200,216,360,0,6],CA:[2200,40,67,0,8],
+RU:[2200,144,1150,1,8],KR:[1800,52,500,0,9],AU:[1800,26,60,0,8],MX:[1800,128,260,0,6],ES:[1600,48,122,0,8],
+ID:[1400,278,400,0,5],NL:[1100,18,35,0,8],TR:[1100,85,355,0,7],SA:[1100,36,225,0,6],CH:[900,9,20,0,9],
+PL:[800,38,200,0,7],TW:[800,24,170,0,9],BE:[630,12,25,0,8],SE:[600,10,25,0,9],AR:[640,46,80,0,5],
+IE:[550,5,8,0,8],AT:[520,9,23,0,8],NO:[500,5,25,0,9],IL:[520,10,170,1,9],AE:[510,10,63,0,7],
+SG:[500,6,51,0,9],TH:[510,72,360,0,6],BD:[450,172,160,0,4],VN:[430,99,480,0,5],EG:[390,112,440,0,5],
+MY:[430,34,113,0,6],ZA:[400,60,70,0,5],PH:[440,117,150,0,5],DK:[400,6,15,0,8],CO:[360,52,295,0,5],
+PK:[340,240,650,1,5],CL:[340,19,77,0,6],FI:[300,5.6,20,0,8],RO:[350,19,70,0,6],CZ:[340,10.8,25,0,7],
+PT:[290,10.4,27,0,7],IQ:[270,45,200,0,4],NZ:[250,5.2,9,0,8],PE:[270,34,81,0,5],GR:[250,10.4,142,0,7],
+KZ:[290,20,39,0,5],DZ:[240,45,140,0,5],QA:[220,2.9,17,0,7],HU:[220,9.6,28,0,6],KW:[160,4.3,18,0,6],
+UA:[190,37,900,0,6],MA:[150,37,196,0,5],ET:[160,126,138,0,3],SK:[130,5.4,15,0,6],EC:[120,18,40,0,4],
+DO:[120,11,56,0,4],KE:[110,55,24,0,4],AO:[110,36,107,0,3],OM:[110,4.6,42,0,5],GT:[100,18,20,0,3],
+BG:[110,6.5,30,0,6],LU:[90,0.66,0.4,0,8],HR:[80,3.9,15,0,6],RS:[75,6.7,28,0,6],LK:[85,22,200,0,4],
+UZ:[100,35,68,0,4],GH:[80,34,16,0,3],CI:[80,28,30,0,3],TZ:[80,67,27,0,3],MM:[65,54,406,0,3],
+JO:[50,11,100,0,5],LT:[80,2.8,23,0,7],SI:[70,2.1,7,0,7],AZ:[75,10,67,0,5],TN:[50,12,36,0,5],
+CM:[50,28,25,0,3],UY:[80,3.4,22,0,5],CR:[90,5.2,0,0,5],PA:[85,4.4,4,0,5],BO:[50,12,34,0,3],
+UG:[50,48,45,0,3],PY:[45,6.8,13,0,4],LV:[45,1.9,7,0,7],EE:[42,1.4,7,0,8],CY:[32,1.3,15,0,7],
+IS:[30,0.38,0.2,0,8],SV:[35,6.3,20,0,4],LY:[45,7,40,0,3],NP:[42,30,95,0,3],KH:[45,17,124,0,3],
+SN:[30,17,17,0,3],ZW:[28,16,30,0,3],ZM:[28,20,16,0,3],MZ:[20,33,11,0,2],CD:[65,102,135,0,2],
+SD:[40,48,100,0,2],GE:[32,3.7,20,0,5],AM:[24,3,42,0,5],AL:[24,2.8,8,0,5],MD:[17,2.6,6,0,5],
+BA:[27,3.2,10,0,5],MK:[16,1.8,8,0,5],ME:[7,0.62,2,0,5],BY:[72,9.2,48,0,5],TM:[60,6.5,36,0,3],
+KG:[14,7,10,0,3],TJ:[13,10,9,0,3],AF:[17,41,150,0,2],YE:[20,34,40,0,2],SY:[15,22,170,0,3],
+LB:[18,5.4,80,0,4],PS:[18,5.4,0,0,3],IR:[400,89,610,0,6],KP:[30,26,1280,1,6],MN:[20,3.4,10,0,4],
+LA:[15,7.5,29,0,3],BT:[3,0.78,6,0,3],HN:[34,10,12,0,3],NI:[17,7,12,0,3],CU:[110,11,50,0,4],
+HT:[20,11.7,0,0,2],JM:[19,2.8,4,0,4],TT:[28,1.4,4,0,5],BS:[14,0.4,1,0,4],BZ:[3,0.4,2,0,3],
+GY:[16,0.8,3,0,3],SR:[4,0.6,2,0,3],VE:[100,28,123,0,4],NG:[250,224,230,0,3],ML:[20,23,20,0,2],
+NE:[17,27,14,0,2],TD:[14,18,34,0,2],BF:[20,23,11,0,2],MG:[16,30,14,0,2],MW:[13,21,11,0,2],
+NA:[13,2.6,10,0,3],BW:[20,2.7,9,0,4],MU:[15,1.3,1,0,5],GA:[20,2.4,5,0,3],CG:[15,6,10,0,3],
+GQ:[12,1.7,3,0,3],SS:[5,11,185,0,2],ER:[2,3.7,200,0,2],SO:[12,18,20,0,2],DJ:[4,1.1,10,0,3],
+RW:[14,14,33,0,3],BI:[3,13,30,0,2],SL:[4,8.6,13,0,2],LR:[4,5.4,2,0,2],GN:[22,14,10,0,2],
+GW:[2,2.1,4,0,2],GM:[2,2.7,4,0,2],MR:[11,4.9,16,0,2],BJ:[19,13,12,0,2],TG:[9,9,10,0,2],
+CF:[3,5.6,7,0,1],LS:[2.5,2.3,2,0,2],SZ:[5,1.2,3,0,3],BN:[15,0.45,7,0,5],TL:[2,1.4,2,0,2],
+PG:[31,10,4,0,3],FJ:[5,0.93,4,0,4],SB:[1.6,0.74,0,0,2],VU:[1,0.34,0,0,2],NC:[10,0.27,0,0,5],
+EH:[1,0.6,0,0,1],XK:[10,1.8,5,0,4],GL:[3,0.06,0,0,5],PR:[120,3.2,0,0,6],FK:[1,0.003,0,0,3]
+};
+
+// Blocs and rivalries drive diplomacy between neighbors.
+var BLOCS = {
+ NATO:'US CA GB FR DE IT ES PT NL BE LU DK NO IS PL CZ SK HU RO BG GR TR LT LV EE SI HR AL ME MK FI SE',
+ EU:'DE FR IT ES PT NL BE LU IE DK SE FI AT PL CZ SK HU RO BG GR HR SI LT LV EE CY',
+ ARAB:'SA AE KW QA OM JO EG MA TN DZ LY IQ BH LB SY YE SD',
+ ASEAN:'ID MY TH VN PH SG BN KH LA MM',
+ AU:'ZA NG KE ET GH TZ UG ZM ZW MZ AO NA BW RW SN CI CM SD LY DZ MA TN EG CD CG GA ML NE BF TD MR GN SL LR BJ TG',
+ CSTO:'RU BY KZ KG TJ AM',
+ LATAM:'AR BR CL UY PY BO PE CO EC VE MX CR PA GT HN SV NI',
+ SCO:'CN RU IN PK KZ KG TJ UZ IR BY'
+};
+var RIVALS = [
+ 'IN-PK','IN-CN','KP-KR','IL-IR','IL-LY','IL-SY','IL-LB','IL-YE','IL-IQ','SA-IR','RU-UA','RU-GE','RU-EE','RU-LV','RU-LT','RU-PL','RU-FI',
+ 'AM-AZ','GR-TR','CY-TR','ET-ER','ET-SO','SD-SS','RW-CD','MA-DZ','EG-ET','TW-CN','JP-CN','JP-KP','JP-RU','VN-CN','PH-CN','AF-PK','AF-IR',
+ 'IQ-IR','IQ-KW','CO-VE','VE-GY','BO-CL','PE-CL','KG-TJ','UZ-TJ','RS-XK','RS-HR','RS-AL','BY-PL','BY-UA','BY-LT','BY-LV','ER-DJ','SS-UG','NG-NE'
+];
+var FRIENDS = [
+ 'US-CA','US-MX','US-JP','US-KR','US-AU','US-GB','US-IL','US-PH','US-TW','CN-RU','CN-KP','CN-PK','CN-KH','CN-LA','CN-MM','CN-KZ','CN-BY',
+ 'FR-DE','GB-IE','IN-BT','IN-NP','IN-BD','IN-LK','AU-NZ','SA-AE','SA-EG','SA-JO','TR-AZ','TR-GE','RU-BY','RU-KZ','RU-AM','RU-TJ','RU-KG','IR-SY','IR-IQ',
+ 'BR-AR','BR-UY','BR-PY','ZA-NA','ZA-BW','ZA-ZW','NG-BJ','NG-CM','KE-UG','KE-TZ','NO-SE','NO-DK','SE-FI','DE-PL','DE-AT','DE-NL','DE-CH','ES-PT','FR-ES','FR-BE'
+];
+
+(function () {
+'use strict';
+/* ---------- Map source (hosted script that defines AmCharts.maps.worldLow) ---------- */
+var MAP_SOURCES = [
+  'https://cdnjs.cloudflare.com/ajax/libs/ammaps/3.21.15/maps/js/worldLow.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/ammaps/3.14.4/maps/js/worldLow.js',
+  'https://cdn.jsdelivr.net/npm/ammap3@3.21.15/ammap/maps/js/worldLow.js'
+];
+
+function loadMapData(cb) {
+  window.AmCharts = window.AmCharts || {};
+  window.AmCharts.maps = window.AmCharts.maps || {};
+  var i = 0;
+  (function next() {
+    if (i >= MAP_SOURCES.length) { cb(null); return; }
+    var s = document.createElement('script');
+    s.src = MAP_SOURCES[i++];
+    s.onload = function () {
+      var w = window.AmCharts.maps.worldLow;
+      if (w && w.svg && w.svg.g) cb(w); else next();
+    };
+    s.onerror = next;
+    document.head.appendChild(s);
+  })();
+}
+
+/* ---------- Helpers ---------- */
+function hash01(str) {
+  var x = 2166136261;
+  for (var i = 0; i < str.length; i++) { x ^= str.charCodeAt(i); x = Math.imul(x, 16777619); }
+  return (x >>> 0) / 4294967295;
+}
+function pairKey(a, b) { return a < b ? a + '-' + b : b + '-' + a; }
+function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+
+/* ---------- Path parsing ---------- */
+function parseRings(d) {
+  var re = /([a-zA-Z])|(-?\d*\.?\d+(?:[eE][-+]?\d+)?)/g, m, tokens = [];
+  while ((m = re.exec(d))) tokens.push(m[1] ? m[1] : parseFloat(m[2]));
+  var rings = [], ring = null, cx = 0, cy = 0, sx = 0, sy = 0, cmd = '', i = 0;
+  function num() { return tokens[i++]; }
+  function isNum() { return typeof tokens[i] === 'number'; }
+  function add(x, y) { cx = x; cy = y; if (!ring) { ring = []; rings.push(ring); } ring.push([x, y]); }
+  while (i < tokens.length) {
+    if (typeof tokens[i] === 'string') cmd = tokens[i++];
+    var rel = cmd === cmd.toLowerCase();
+    var C = cmd.toUpperCase();
+    if (C === 'Z') { if (ring) ring.push([sx, sy]); ring = null; cx = sx; cy = sy; continue; }
+    if (C === 'M') {
+      var x = num(), y = num(); if (rel) { x += cx; y += cy; }
+      ring = null; add(x, y); sx = x; sy = y; cmd = rel ? 'l' : 'L';
+    } else if (C === 'L') {
+      while (isNum()) { var lx = num(), ly = num(); if (rel) { lx += cx; ly += cy; } add(lx, ly); }
+    } else if (C === 'H') {
+      while (isNum()) { var hx = num(); add(rel ? cx + hx : hx, cy); }
+    } else if (C === 'V') {
+      while (isNum()) { var vy = num(); add(cx, rel ? cy + vy : vy); }
+    } else if (C === 'C') {
+      while (isNum()) { var a = [num(), num(), num(), num(), num(), num()]; add(rel ? cx + a[4] : a[4], rel ? cy + a[5] : a[5]); }
+    } else if (C === 'Q' || C === 'S') {
+      while (isNum()) { var q = [num(), num(), num(), num()]; add(rel ? cx + q[2] : q[2], rel ? cy + q[3] : q[3]); }
+    } else { i++; }
+  }
+  return rings;
+}
+
+/* ---------- Country model ---------- */
+var countries = {};      // id -> country
+var order = [];          // ids
+var blocOf = {};         // id -> [bloc names]
+var rivalSet = {}, friendSet = {};
+
+function buildCountries(world) {
+  var paths = world.svg.g.path || [];
+  if (!Array.isArray(paths)) paths = [paths];
+  paths.forEach(function (p) {
+    if (!p || !p.id || !p.d || p.id === 'AQ') return;
+    var c = countries[p.id];
+    if (c) { c.d += ' ' + p.d; return; }
+    countries[p.id] = { id: p.id, name: p.title || p.id, d: p.d };
+    order.push(p.id);
+  });
+
+  Object.keys(BLOCS).forEach(function (b) {
+    BLOCS[b].split(' ').forEach(function (code) { (blocOf[code] = blocOf[code] || []).push(b); });
+  });
+  RIVALS.forEach(function (k) { var p = k.split('-'); rivalSet[pairKey(p[0], p[1])] = 1; });
+  FRIENDS.forEach(function (k) { var p = k.split('-'); friendSet[pairKey(p[0], p[1])] = 1; });
+
+  order.forEach(function (id) {
+    var c = countries[id];
+    var st = DATA[id];
+    if (!st) {
+      var r = hash01('stat' + id);
+      st = [Math.round(2 + r * 20), +(0.1 + r * 4).toFixed(2), +(r * 6).toFixed(1), 0, 2 + Math.round(r * 3)];
+    }
+    c.gdp = st[0]; c.pop = st[1]; c.troops = st[2]; c.nuke = !!st[3]; c.tech = st[4];
+    c.rings = parseRings(c.d);
+    var best = null, bestA = -1;
+    c.rings.forEach(function (ring) {
+      var x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+      ring.forEach(function (pt) { if (pt[0] < x0) x0 = pt[0]; if (pt[0] > x1) x1 = pt[0]; if (pt[1] < y0) y0 = pt[1]; if (pt[1] > y1) y1 = pt[1]; });
+      var a = (x1 - x0) * (y1 - y0);
+      if (a > bestA) { bestA = a; best = [(x0 + x1) / 2, (y0 + y1) / 2]; }
+    });
+    c.cx = best ? best[0] : 0; c.cy = best ? best[1] : 0;
+    c.land = []; c.sea = []; c.owned = false;
+  });
+}
+
+/* Land neighbours: countries whose outlines share points. */
+function computeNeighbors() {
+  var CELL = 1.4, grid = {}, counts = {};
+  order.forEach(function (id) {
+    countries[id].rings.forEach(function (ring) {
+      for (var i = 0; i < ring.length; i++) {
+        var pts = [ring[i]];
+        if (i > 0) {
+          var a = ring[i - 1], b = ring[i];
+          var n = Math.min(60, Math.floor(Math.hypot(b[0] - a[0], b[1] - a[1]) / 1.0));
+          for (var k = 1; k < n; k++) pts.push([a[0] + (b[0] - a[0]) * k / n, a[1] + (b[1] - a[1]) * k / n]);
+        }
+        pts.forEach(function (p) {
+          var gx = Math.floor(p[0] / CELL), gy = Math.floor(p[1] / CELL);
+          for (var dx = -1; dx <= 1; dx++) for (var dy = -1; dy <= 1; dy++) {
+            var cell = grid[(gx + dx) + ',' + (gy + dy)];
+            if (!cell) continue;
+            for (var j = 0; j < cell.length; j++) {
+              var o = cell[j];
+              if (o.id === id) continue;
+              if (Math.abs(o.x - p[0]) <= CELL && Math.abs(o.y - p[1]) <= CELL) {
+                var key = pairKey(id, o.id);
+                counts[key] = (counts[key] || 0) + 1;
+              }
+            }
+          }
+          var kk = gx + ',' + gy;
+          (grid[kk] = grid[kk] || []).push({ id: id, x: p[0], y: p[1] });
+        });
+      }
+    });
+  });
+  Object.keys(counts).forEach(function (k) {
+    if (counts[k] < 3) return;
+    var p = k.split('-');
+    countries[p[0]].land.push(p[1]);
+    countries[p[1]].land.push(p[0]);
+  });
+  // Sea neighbours for island states and isolated countries.
+  order.forEach(function (id) {
+    var c = countries[id];
+    if (c.land.length >= 2) return;
+    var list = order.filter(function (o) { return o !== id && c.land.indexOf(o) < 0; }).map(function (o) {
+      var t = countries[o];
+      return { id: o, dist: Math.hypot(t.cx - c.cx, t.cy - c.cy) };
+    }).sort(function (a, b) { return a.dist - b.dist; });
+    var added = 0;
+    for (var i = 0; i < list.length && added < 3; i++) {
+      if (list[i].dist > 160 && added > 0) break;
+      c.sea.push(list[i].id); added++;
+      if (countries[list[i].id].sea.indexOf(id) < 0 && countries[list[i].id].land.indexOf(id) < 0) countries[list[i].id].sea.push(id);
+    }
+  });
+  // Strait / short-sea links the distance heuristic misses (e.g. Greenland-Canada).
+  [['GL','CA'],['GL','IS'],['IE','GB'],['GB','FR'],['DK','SE'],['AU','ID'],['AU','NZ'],['AU','PG'],['JP','KR'],['JP','RU'],['CU','US'],['LK','IN'],['CY','TR'],['MT','IT'],['SG','MY'],['PH','TW'],['BH','SA'],['HT','CU'],['JM','CU']].forEach(function (pr) {
+    var a = countries[pr[0]], b = countries[pr[1]];
+    if (!a || !b || a.land.indexOf(pr[1]) >= 0 || a.sea.indexOf(pr[1]) >= 0) return;
+    a.sea.push(pr[1]); if (b.sea.indexOf(pr[0]) < 0 && b.land.indexOf(pr[0]) < 0) b.sea.push(pr[0]);
+  });
+}
+
+function neighborsOf(id) {
+  var c = countries[id];
+  return c.land.concat(c.sea.filter(function (s) { return c.land.indexOf(s) < 0; }));
+}
+/* ---------- Relations ---------- */
+function relation(a, b) {
+  if (typeof G !== 'undefined' && G && G.mode === 'scratch') return 50;
+  var score = 50 + (hash01(pairKey(a, b) + 'r') - 0.5) * 24;
+  var ba = blocOf[a] || [], bb = blocOf[b] || [];
+  var shared = ba.filter(function (x) { return bb.indexOf(x) >= 0; });
+  if (shared.length) score += 14 + 5 * Math.min(2, shared.length - 1) + (shared.indexOf('NATO') >= 0 || shared.indexOf('EU') >= 0 ? 8 : 0);
+  var key = pairKey(a, b);
+  if (friendSet[key]) score += 22;
+  if (rivalSet[key]) score -= 42;
+  var ca = countries[a], cb = countries[b];
+  if (ca.nuke && cb.nuke && !shared.length) score -= 8;
+  if ((ba.indexOf('NATO') >= 0 && bb.indexOf('CSTO') >= 0) || (bb.indexOf('NATO') >= 0 && ba.indexOf('CSTO') >= 0)) score -= 14;
+  return Math.max(4, Math.min(98, Math.round(score)));
+}
+/* ---------- Ranks and power ---------- */
+function powerIndex(c) {
+  var v = 0.34 * Math.log10(c.troops * 1000 + 10) / Math.log10(2100000)
+        + 0.36 * Math.log10(c.gdp + 1) / Math.log10(30000)
+        + 0.2 * c.tech / 10 + (c.nuke ? 0.1 : 0);
+  return Math.round(Math.max(1, Math.min(100, v * 100 / 1.0)));
+}
+var ranks = { gdp: {}, pop: {}, troops: {}, power: {} };
+function computeRanks() {
+  function rankBy(f, store) {
+    order.slice().sort(function (a, b) { return f(countries[b]) - f(countries[a]); }).forEach(function (id, i) { store[id] = i + 1; });
+  }
+  order.forEach(function (id) { countries[id].power = powerIndex(countries[id]); });
+  rankBy(function (c) { return c.gdp; }, ranks.gdp);
+  rankBy(function (c) { return c.pop; }, ranks.pop);
+  rankBy(function (c) { return c.troops; }, ranks.troops);
+  rankBy(function (c) { return c.power; }, ranks.power);
+}
+/* ---------- تنسيق الأرقام والنصوص ---------- */
+function fmtMoney(bn) { if (bn >= 1000) return (bn / 1000).toFixed(1) + ' تريليون $'; if (bn >= 10) return Math.round(bn) + ' مليار $'; return bn.toFixed(1) + ' مليار $'; }
+function fmtPop(m) { if (m >= 100) return Math.round(m) + ' مليون'; if (m >= 1) return m.toFixed(1) + ' مليون'; return Math.max(1, Math.round(m * 1000)) + ' ألف'; }
+function fmtTroops(k) { if (k >= 1000) return (k / 1000).toFixed(2) + ' مليون'; if (k >= 1) return Math.round(k) + ' ألف'; if (k > 0) return Math.round(k * 1000) + ' جندي'; return 'لا يوجد'; }
+function fmtN(v) { return Math.round(v).toLocaleString('en-US'); }
+function fmtD(v) { return v.toFixed(1); }
+function arabize() {
+  var dn = null, X = { XK: 'كوسوفو', EH: 'الصحراء الغربية', PS: 'فلسطين' };
+  try { dn = new Intl.DisplayNames(['ar'], { type: 'region' }); } catch (e) {}
+  order.forEach(function (id) {
+    var n = X[id];
+    if (!n && dn) { try { n = dn.of(id); } catch (e) {} }
+    if (n && n !== id) countries[id].name = n;
+  });
+  order.forEach(function (id) { countries[id].orig = countries[id].name; });
+}
+function relLabel(s) {
+  if (s >= 75) return { t: 'حليف', k: 'good' };
+  if (s >= 60) return { t: 'صديق', k: 'good' };
+  if (s >= 40) return { t: 'محايد', k: 'mid' };
+  if (s >= 25) return { t: 'متوتر', k: 'warn' };
+  return { t: 'عدائي', k: 'bad' };
+}
+function outlook(id) {
+  var c = countries[id], ns = c.land.length ? c.land : neighborsOf(id);
+  var hostile = ns.filter(function (n) { return relation(id, n) < 25; }).length;
+  var friendly = ns.filter(function (n) { return relation(id, n) >= 60; }).length;
+  var score = c.power + friendly * 3 - hostile * 6 + (c.nuke ? 8 : 0);
+  if (score >= 62) return { t: 'بداية قوية', k: 'good' };
+  if (score >= 42) return { t: 'بداية متوازنة', k: 'mid' };
+  return { t: 'بداية صعبة', k: 'bad' };
+}
+
+/* ---------- الحالة العامة ---------- */
+var G = null, mod = {}, NUKE_AT = 200000;
+/* صعوبة الغزو */
+var HARD = { inc: 0.88, cost: 1.35, devGain: 0.22, cd: 3 };
+var DEF_K = 1.2, REQ_TROOPS = 1.1, REQ_POWER = 1, SEA_PEN = 0.75, STAB_HIT = 4, OCC_DAYS = 20, COAL_STEP = 0.008, COAL_MAX = 0.25;
+var TAXM = [0.8, 1, 1.3, 1.7], TAXD = [0.6, 0.2, -0.4, -1.2], TAXN = ['مخفّضة', 'عادية', 'مرتفعة', 'قاسية'];
+function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+function nm(id) { return countries[id].name; }
+function on(id) { return countries[id].orig || countries[id].name; }
+function lab(id) { return id === G.player ? on(id) + ' (أنت)' : on(id); }
+function rel(a, b) { if (a === b) return 100; return Math.round(clamp(relation(a, b) + (mod[pairKey(a, b)] || 0), 2, 99)); }
+function bump(a, b, d) { var k = pairKey(a, b); mod[k] = clamp((mod[k] || 0) + d, -60, 60); }
+function newGame() {
+  mod = {};
+  G = { mode: 'classic', navy: 0, zown: {}, tnet: {}, zseed: Math.floor(Math.random() * 1e6) + 1, leader: null, up: {}, mem: {}, focus: {}, prot: 0, armyLv: 0, phase: 'select', player: null, army: 0, nuke: false, pacts: {}, offers: [], cool: {}, shield: {}, hold: false, occ: {}, owner: {}, R: {}, dev: {}, deals: {}, tax: 1, stab: 70, day: 0, frac: 0, speed: 1, log: [], won: false, lost: false, dirty: false };
+  order.forEach(function (id) { var c = countries[id]; G.owner[id] = id; if (c.orig) c.name = c.orig; G.R[id] = 8 + hash01('r' + id) * 10 + c.gdp * 0.004; });
+  G.rej = {}; G.zl = {}; G.zn = 0; G.znext = 0; G.nb = {}; G.upCd = 0; ZN = G.zl;
+}
+function toast(text, tone) {
+  var box = document.getElementById('toasts');
+  if (!box || !tone) return;
+  var t = document.createElement('div');
+  t.className = 'toast ' + tone; t.textContent = (tone === 'alert' ? '⚠ ' : '') + text;
+  box.appendChild(t);
+  while (box.children.length > 4) box.removeChild(box.firstChild);
+  setTimeout(function () { t.classList.add('out'); setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 400); }, tone === 'alert' ? 9000 : 5000);
+}
+var logCount = 0, seenCount = 0;
+function updateEvBadge() {
+  var b = document.getElementById('evBadge'); if (!b) return;
+  var n = Math.max(0, logCount - seenCount);
+  b.hidden = n === 0; b.textContent = n > 99 ? '99+' : n;
+}
+function noticeRelatedToPlayer(s) {
+  if (!G || G.player == null) return false;
+  var playerName = on(G.player), playerShort = nm(G.player);
+  if (s.indexOf(playerName) !== -1 || s.indexOf(playerShort) !== -1 || s.indexOf('أراضيك') !== -1 || s.indexOf('دولتك') !== -1 || s.indexOf('دولتك') !== -1 || s.indexOf('معك') !== -1 || s.indexOf('عليك') !== -1 || s.indexOf('مواردك') !== -1 || s.indexOf('جيشك') !== -1 || s.indexOf('تحالفك') !== -1) return true;
+  return false;
+}
+function logPush(s, tone) { G.log.unshift({ day: G.day, text: s, tone: tone || '' }); if (G.log.length > 150) G.log.pop(); logCount++; updateEvBadge(); G.dirty = true; if (noticeRelatedToPlayer(s)) toast(s, tone); }
+function terrOf(e) { return order.filter(function (id) { return G.owner[id] === e; }); }
+function isMine(id) { return G.owner[id] === G.player; }
+
+/* ---------- الموارد ---------- */
+function baseInc(c) { return 1 + Math.sqrt(c.gdp) * 0.12 + Math.sqrt(c.pop) * 0.1; }
+var STRAITS = { EG: 1, TR: 1, PA: 1, SG: 1, MY: 1, ID: 1, OM: 1, AE: 1, IR: 1, YE: 1, DJ: 1, MA: 1, ES: 1, DK: 1, GB: 1, ER: 1 };
+function strB(id) { return STRAITS[id] ? 1.5 + 0.2 * baseInc(countries[id]) : 0; }
+function terrInc(id) { return (baseInc(countries[id]) * (1 + (G.owner[id] === G.player ? HARD.devGain : 0.25) * (G.dev[id] || 0)) + strB(id)) * ((G.occ && G.occ[id] > G.day) ? 0.5 : 1); }
+function empInc(e) { var s = 0; terrOf(e).forEach(function (id) { s += terrInc(id); }); return s; }
+function devCost(id) { return Math.round((G.owner[id] === G.player ? HARD.cost : 1) * 12 * ((G.dev[id] || 0) + 1) * (1 + Math.sqrt(baseInc(countries[id])))); }
+function income() {
+  var dom = 0, trade = 0, tribute = 0;
+  terrOf(G.player).forEach(function (id) { dom += terrInc(id); });
+  var taxed = dom * TAXM[G.tax] * (0.4 + 0.6 * G.stab / 100);
+  Object.keys(G.deals).forEach(function (e) {
+    var d = G.deals[e], ei = empInc(e);
+    if (d.trade) trade += ei * 0.15 * (d.ally ? 2 : 1);
+    if (d.tribute) tribute += ei * 0.2;
+  });
+  var sea = zoneInc(G.player);
+  var K = HARD.inc;
+  return { dom: dom * K, tax: (taxed - dom) * K, trade: trade * K, tribute: tribute * K, sea: sea * K, total: (taxed + trade + tribute + sea) * K };
+}
+
+/* ---------- القتال ---------- */
+function defBase(id) { var c = countries[id], b = Math.max(c.troops, 3 + c.pop * 0.05) * (1 + c.tech / 12) * 1.3; return c.nuke ? b * 1.6 : b; }
+function landBorder(id, e) { return countries[id].land.some(function (n) { return G.owner[n] === e; }); }
+function defRes(id, att) {
+  var o = G.owner[id], c = countries[id], d = 8 + defBase(id) / 9 + Math.pow(c.power / 100, 3) * 900 + (G.R[o] || 0) * 0.12;
+  d *= 1 + Math.min(0.5, allyCount(o) * 0.08) + Math.min(0.3, (G.dev[id] || 0) * 0.06) + (G.owner[id] === id ? 0.15 : 0);
+  d *= DEF_K;
+  if (att && att === G.player) d *= 1 + Math.min(COAL_MAX, (terrOf(G.player).length - 1) * COAL_STEP);
+  if (o === G.player) d += G.army / 15;
+  if (G.mode === 'scratch') d *= 1 + (o === G.player ? 0.4 : AI_PROT_K) * protLv(o);
+  return d;
+}
+function atkStr(e, amt, id) {
+  var ts = terrOf(e), t = 0;
+  ts.forEach(function (x) { t += countries[x].tech; });
+  var v = amt * (1 + (ts.length ? t / ts.length : 3) / 12);
+  if (G.mode === 'scratch') v *= 1 + AIK.atk * armyLv(e);
+  if (id && !landBorder(id, e)) v *= SEA_PEN;
+  if (id) v /= areaMult(ts, id);
+  return v;
+}
+function reachable(id, e) {
+  e = e || G.player;
+  if (G.owner[id] === e) return false;
+  return neighborsOf(id).some(function (n) { return G.owner[n] === e; });
+}
+function lvOf(e) {
+  if (G.mode !== 'scratch') return 0;
+  var ts = terrOf(e), s = 0; ts.forEach(function (id) { s += G.dev[id] || 0; });
+  return armyLv(e) + protLv(e) + (ts.length ? s / ts.length : 0);
+}
+function powScore(troops, gdp, tech, nuke, dip, res, lv) {
+  var m = Math.log10(troops * 1000 + 10) / Math.log10(2100000), e = Math.log10(gdp + 1) / Math.log10(30000), r = Math.log10((res || 0) + 1) / Math.log10(300000);
+  return Math.round(100 * clamp(0.33 * m + 0.25 * e + 0.04 * tech / 10 + (nuke ? 0.06 : 0) + 0.17 * dip + 0.15 * r + AIK.lp * (lv || 0), 0.01, 1));
+}
+function allyCount(e) {
+  if (e === G.player) return Object.keys(G.deals).filter(function (o) { return G.deals[o].ally; }).length;
+  return Object.keys(G.pacts[e] || {}).length + ((G.deals[e] && G.deals[e].ally) ? 1 : 0);
+}
+function isAllied(a, b) {
+  if (a === b) return true;
+  if (a === G.player) return !!(G.deals[b] && G.deals[b].ally);
+  if (b === G.player) return !!(G.deals[a] && G.deals[a].ally);
+  return !!(G.pacts[a] && G.pacts[a][b]);
+}
+function dipOf(id) {
+  var ns = neighborsOf(id), t = 0;
+  ns.forEach(function (n) { t += rel(id, n); });
+  return clamp((ns.length ? t / ns.length / 100 : 0.5) * 0.9 + 0.08 * allyCount(id), 0, 1);
+}
+function refreshPower() { order.forEach(function (id) { var c = countries[id]; c.power = powScore(c.troops, c.gdp, c.tech, c.nuke, dipOf(id), G.R[G.owner[id]], lvOf(G.owner[id])); }); }
+function aggOf(e) {
+  var tr = 0, g = 0, t = 0, nk = 0, ts = terrOf(e);
+  ts.forEach(function (id) { var c = countries[id]; tr += c.troops; g += c.gdp; t += c.tech; if (c.nuke) nk = 1; });
+  if (e === G.player) { tr = G.army; if (G.nuke) nk = 1; }
+  return { troops: tr, nuke: !!nk, power: powScore(tr, g, ts.length ? t / ts.length : 3, nk, dipOf(e), G.R[e], lvOf(e)) };
+}
+function reqCheck(id) {
+  var a = aggOf(G.player), t = aggOf(G.owner[id]);
+  return { army: a.troops, tr: t.troops, pow: a.power, tp: t.power, tnuke: t.nuke, mynuke: a.nuke, ok: a.troops > t.troops * REQ_TROOPS && a.power > t.power + REQ_POWER && (!t.nuke || a.nuke) };
+}
+function oddsLabel(r) {
+  if (r >= 1.35) return { t: 'فوز مرجّح', k: 'good' };
+  if (r >= 0.95) return { t: 'مخاطرة', k: 'warn' };
+  return { t: 'فرص ضعيفة', k: 'bad' };
+}
+function cleanDeals() {
+  Object.keys(G.zown || {}).forEach(function (i) { if (!terrOf(G.zown[i]).length) delete G.zown[i]; });
+  Object.keys(G.tnet || {}).forEach(function (a) {
+    if (!terrOf(a).length) { Object.keys(G.tnet[a]).forEach(function (b) { if (G.tnet[b]) delete G.tnet[b][a]; }); delete G.tnet[a]; }
+  });
+  Object.keys(G.pacts).forEach(function (a) {
+    Object.keys(G.pacts[a]).forEach(function (b) { if (!terrOf(a).length || !terrOf(b).length) { delete G.pacts[a][b]; if (G.pacts[b]) delete G.pacts[b][a]; } });
+  });
+  G.offers = G.offers.filter(function (o) { return terrOf(o.from).length; });
+  Object.keys(G.deals).forEach(function (e) {
+    var d = G.deals[e];
+    if (!terrOf(e).length || (!d.ally && !d.trade && !d.tribute)) delete G.deals[e];
+  });
+}
+function checkEnd() {
+  if (G.phase !== 'play') return;
+  var n = terrOf(G.player).length;
+  if (!n) G.lost = true; else if (n === order.length) G.won = true;
+}
+
+/* ---------- ردود فعل الدول ---------- */
+function react(actor, victim, kind) {
+  var out = [];
+  order.forEach(function (z) {
+    if (z === actor || z === victim || G.owner[z] !== z) return;
+    var ra = rel(z, actor), rv = rel(z, victim);
+    var s = kind === 'ally' ? Math.min(ra, rv) - 50 : ra - 0.9 * rv - 5;
+    if (Math.abs(s) < 14) return;
+    out.push({ z: z, s: s, w: Math.abs(s) * (1 + countries[z].power / 50) });
+  });
+  out.sort(function (a, b) { return b.w - a.w; });
+  var max = (actor === G.player || victim === G.player || G.owner[victim] === G.player) ? 3 : 1;
+  out.slice(0, max).forEach(function (o) {
+    var A = lab(actor), V = lab(victim), ap = o.s > 0, t;
+    if (kind === 'conquer') t = ap ? 'ترحّب بغزو ' + A + ' ضد ' + V : 'تستنكر غزو ' + A + ' ضد ' + V;
+    else if (kind === 'ally') t = ap ? 'ترحّب بالتحالف بين ' + A + ' و' + V : 'تعترض على التحالف بين ' + A + ' و' + V;
+    else t = ap ? 'تتفهّم فرض ' + A + ' الجزية على ' + V : 'تستنكر فرض ' + A + ' الجزية على ' + V;
+    bump(o.z, actor, ap ? 3 : -4);
+    logPush((ap ? '✔ ' : '✖ ') + nm(o.z) + ' ' + t + '.', ap ? 'good' : 'bad');
+  });
+}
+
+function allySupport(att, V) {
+  Object.keys(G.pacts[V] || {}).forEach(function (z) { if (z !== att) bump(z, att, -10); });
+  if (att !== G.player && V !== G.player && G.deals[V] && G.deals[V].ally) { bump(G.player, att, -12); logPush('حليفك ' + on(V) + ' تعرّض لغزو من ' + on(att) + '.', 'bad'); }
+}
+function conquer(att, id, amt) {
+  var c = countries[id], def = defRes(id, att), V = G.owner[id], a = atkStr(att, amt, id) * (0.85 + Math.random() * 0.3), back, old = on(id), me = att === G.player, cas = 0, gain = 0;
+  var win = (me ? reqCheck(id).ok : true) && a > def;
+  (G.mem = G.mem || {}); (G.mem[V] = G.mem[V] || {})[att] = G.day;
+  G.R[att] = Math.max(0, G.R[att] - amt);
+  if (win) {
+    back = amt * Math.max(0, 1 - def / a) * 0.35 + def * 0.06;
+    G.R[att] += back; G.owner[id] = att; G.dev[id] = 0; G.shield[id] = G.day + 15; G.occ[id] = G.day + OCC_DAYS;
+    c.name = on(att) + ' (' + old + ')';
+    var fz = function () { fxConquer(id, att); }; if (att === G.player) fxPending.push(fz); else fz();
+    bump(att, id, -15);
+    allySupport(att, V);
+    if (me) {
+      G.stab = clamp(G.stab - STAB_HIT, 0, 100);
+      order.forEach(function (z) { if (z === att || z === V || G.owner[z] !== z) return; bump(z, att, rel(z, V) >= 60 ? -6 : -2); });
+    }
+    if (me) {
+      delete G.deals[V];
+      cas = Math.min(G.army * 0.35, 0.5 + c.troops * 0.2 * (0.7 + Math.random() * 0.6));
+      gain = c.troops * 0.6 + 2;
+      G.army = Math.max(1, G.army - cas + gain);
+    }
+    if (V === G.player) { delete G.deals[att]; G.army = Math.max(1, G.army * 0.9); }
+    if (me) logPush('استوليت على ' + c.name + '.', 'good');
+    else if (V === G.player) logPush('تنبيه! ' + on(att) + ' استولت على ' + old + ' من أراضيك.', 'alert');
+    else logPush(on(att) + ' استولت على ' + old + (V !== id ? ' (من ' + on(V) + ')' : '') + '.', 'war');
+    react(att, id, 'conquer');
+  } else {
+    back = amt * 0.3; G.R[att] += back;
+    if (V === G.player && !me) { G.army = Math.max(1, G.army * 0.97); logPush('صدّت قواتك هجوم ' + on(att) + ' على ' + c.name + '.', 'good'); }
+    if (me) {
+      cas = Math.min(G.army * 0.3, 0.5 + c.troops * 0.15 + G.army * (0.05 + Math.random() * 0.07));
+      G.army = Math.max(1, G.army - cas);
+      G.stab = clamp(G.stab - 3, 0, 100);
+      logPush('فشل هجومك على ' + c.name + '. خسرت جزءاً من جيشك.', 'bad');
+    }
+  }
+  cleanDeals(); checkEnd(); G.dirty = true;
+  return { win: win, loss: amt - back, def: def, a: a, amt: amt, cas: cas, gain: gain, name: c.name };
+}
+
+/* ---------- الذكاء الاصطناعي للدول ---------- */
+function launch(e, id, amt) {
+  if (G.owner[id] === G.player) {
+    logPush(on(e) + ' تطلق هجوماً على ' + nm(id) + '!', 'alert');
+    G.focus = G.focus || {};
+    Object.keys(G.pacts[e] || {}).forEach(function (z) { if (z !== G.player && !isAllied(z, G.player)) { G.cool[z] = G.day; G.focus[z] = G.day + 8; } });
+  }
+  fxRun(nearestOwned(id, e), id, function () {
+    if (G.owner[id] === e || (G.shield[id] || 0) > G.day || !reachable(id, e) || G.R[e] < 1) return;
+    conquer(e, id, Math.min(amt, G.R[e]));
+  });
+}
+function makePact(a, b) {
+  (G.pacts[a] = G.pacts[a] || {})[b] = G.day + 1; (G.pacts[b] = G.pacts[b] || {})[a] = G.day + 1;
+  bump(a, b, 8); logPush(on(a) + ' و' + on(b) + ' أبرمتا تحالفاً.', ''); react(a, b, 'ally'); fxAlliance(a, b);
+}
+function propose(e, o) {
+  if (o === G.player) {
+    if (G.offers.some(function (x) { return x.from === e; }) || (G.deals[e] && G.deals[e].tribute)) return false;
+    if (G.rej && G.rej[e] != null && G.day - G.rej[e] < 365) return false; /* رفضتَ عرضها: لا تجدّده قبل عام */
+    G.offers.push({ from: e, day: G.day });
+    if (G.offerResumeSpeed == null) G.offerResumeSpeed = G.speed || 0;
+    G.speed = 0; /* إيقاف الزمن لحين اتخاذ قرار بشأن العرض */
+    logPush(on(e) + ' تقترح عليك تحالفاً.', '');
+    renderOffers();
+    return true;
+  }
+  makePact(e, o); return true;
+}
+var AIK = { lp: 0.012, wr: 0.12, wcap: 3, grace: 20, dd: 100, dp: 120, da: 100, ab: 1, atk: 0.1, thr: 2, thrS: 0.5, p: 0.6, pf: 1.1, sv: 45, ps: 0.4 };
+function allyMin() { return G.mode === 'scratch' ? 50 : 60; }
+var SZ = {};
+function aiThink(e, pa, foc) {
+  var st = stratOf(e), my = G.R[e], ag = aggOf(e), ts = terrOf(e), neigh = {}, threat = 0, mem = G.mem || (G.mem = {});
+  var aggr = ({ exp: 0.85, def: 0.3, trd: 0.4, reg: 0.6, gp: 0.65 }[st] || 0.6) + hash01('a' + e) * 0.15;
+  if (G.focus && G.focus[e] > G.day) foc = true;
+  ts.forEach(function (id) { neighborsOf(id).forEach(function (n) { var o = G.owner[n]; if (o !== e) neigh[o] = 1; }); });
+  Object.keys(neigh).forEach(function (o) {
+    if (isAllied(e, o)) return;
+    var p = o === G.player ? pa.power : aggOf(o).power;
+    threat = Math.max(threat, (p - ag.power) * (1 + (50 - rel(e, o)) / 100));
+  });
+  threat = Math.max(0, threat);
+  /* 1) التحالفات: الدول الدفاعية تسعى إليها أكثر، والجميع يميل إلى الأطراف المعادية للقوة الأكبر */
+  if (allyCount(e) < (st === 'def' ? 5 : 3)) {
+    var cand = null, cs = 0, amin = allyMin() - (st === 'def' ? 10 : 5);
+    Object.keys(neigh).forEach(function (o) {
+      if (isAllied(e, o) || (o !== G.player && allyCount(o) >= (stratOf(o) === 'def' ? 5 : 3))) return;
+      var r = rel(e, o); if (r < amin) return;
+      var op = o === G.player ? pa.power : aggOf(o).power, sc = r + (op > ag.power ? 8 : 0) + threat * 0.2;
+      if (G.leader && G.leader !== o && G.leader !== e && rel(o, G.leader) < 50) sc += 10;
+      if (sc > cs) { cs = sc; cand = o; }
+    });
+    if (cand && Math.random() < 0.3 + threat / 200 + (st === 'def' ? 0.3 : 0) && propose(e, cand)) return;
+  }
+  /* 2) شبكة الشركاء التجاريين */
+  if (Math.random() < (st === 'trd' ? 0.5 : 0.12)) aiTrade(e, neigh, st);
+  /* 3) تقييم الأهداف حسب النهج الاستراتيجي */
+  var reserve = my * Math.min(0.5, (st === 'def' ? 0.25 : 0.12) + threat / 130), budget = my - reserve, best = null, bs = 0, bamt = 0, far = null, fs = 0;
+  var pl = terrOf(G.player).length, inc45 = empInc(e) * AIK.sv, mySize = ts.length, cxE = 0, cyE = 0;
+  ts.forEach(function (id) { cxE += countries[id].cx; cyE += countries[id].cy; }); cxE /= mySize; cyE /= mySize;
+  order.forEach(function (id) {
+    var o = G.owner[id];
+    if (o === e || isAllied(e, o) || (G.shield[id] || 0) > G.day || !reachable(id, e)) return;
+    var isP = o === G.player; if (isP && G.day < AIK.grace) return;
+    var r = rel(e, id), grudge = mem[e] && mem[e][o] && G.day - mem[e][o] < 150;
+    var rival = st === 'gp' && (SZ[o] || 1) >= Math.max(3, mySize * 1.5);
+    if (r >= 72 && !grudge && !rival) return;
+    var ds = isP ? pa : aggOf(o);
+    if (ds.nuke && !ag.nuke) return;
+    if (ag.troops < ds.troops * 0.5) return;
+    var amt = defRes(id, e) * 1.25 / atkStr(e, 1, id);
+    /* الدول الدفاعية والتجارية لا تهاجم اللاعب إلا حين تلوح فرصة حقيقية */
+    if (isP && (st === 'def' || st === 'trd') && !(amt <= budget * 0.7 || ds.power < ag.power - 3 || grudge)) return;
+    var sc = (20 + terrInc(id) * 25 + ds.power * 0.5) / amt * (1 + aggr) * (1 + (50 - r) / 100);
+    if (isP) sc *= AIK.pf + (foc ? 0.5 : 0) + Math.min(0.7, pl / 25);
+    if (grudge) sc *= 1.6;
+    if (ds.troops < ag.troops * 0.6) sc *= 1.2;
+    if (st === 'exp') sc *= 1.25;
+    else if (st === 'trd') sc *= 0.75;
+    else if (st === 'reg') { var dd = Math.hypot(countries[id].cx - cxE, countries[id].cy - cyE) / base.w; sc *= dd < 0.2 ? 1.6 : (dd > 0.4 ? 0.5 : 1); }
+    if (rival) sc *= 2;
+    if (G.leader && o === G.leader) sc *= st === 'gp' ? 1.6 : 1.3;
+    if (amt <= budget) { if (sc > bs) { bs = sc; best = id; bamt = amt; } }
+    else if (amt <= Math.max(my * 2.2, inc45) && sc > fs) { fs = sc; far = id; }
+  });
+  var thr = (G.mode === 'scratch' ? AIK.thrS : AIK.thr) * (1.3 - 0.6 * aggr) * ({ exp: 0.8, def: 1.5, trd: 1.25 }[st] || 1);
+  if (best && bs >= thr && Math.random() < Math.min(1, AIK.p + 0.5 * aggr + (foc ? 0.2 : 0))) {
+    var tp = G.owner[best] === G.player;
+    if ((G.wb || 0) >= (tp ? 0.4 : 1)) { G.wb -= tp ? 0.7 : 1; launch(e, best, bamt); }
+    return;
+  }
+  /* 4) المناطق البحرية والأسطول */
+  if (aiNaval(e, ts, my, reserve, st)) return;
+  /* 5) الادّخار لهدف قريب المنال بدل إنفاق الموارد */
+  if (far && fs >= thr * 0.5 && Math.random() < AIK.ps + 0.3 * aggr + (foc ? 0.1 : 0)) return;
+  /* 6) التطوير الداخلي */
+  if (G.mode === 'scratch') { aiInvest(e, ts, my, reserve, threat, aggr); return; }
+  var bd = null, bg = 0;
+  ts.forEach(function (id) {
+    var lv = G.dev[id] || 0; if (lv >= 5) return;
+    var cst = devCost(id); if (cst > my - reserve * 0.5) return;
+    var g = terrInc(id) * 0.25 / cst; if (g > bg) { bg = g; bd = id; }
+  });
+  if (bd) { G.R[e] -= devCost(bd); G.dev[bd] = (G.dev[bd] || 0) + 1; }
+}
+/* ---------- النهج الاستراتيجي ---------- */
+var STRAT_T = { exp: 'توسّعية: تبني إمبراطورية', def: 'دفاعية: تحالفات وتحصينات', trd: 'تجارية: شبكة شركاء', reg: 'إقليمية: تهيمن على محيطها', gp: 'قوة عظمى: تمنع بروز منافس أكبر' };
+function stratOf(e) { return (countries[e] && countries[e].st) || 'reg'; }
+function hashM(s) { var x = 2166136261; for (var i = 0; i < s.length; i++) { x ^= s.charCodeAt(i); x = Math.imul(x, 16777619); } x ^= x >>> 16; x = Math.imul(x, 2246822507); x ^= x >>> 13; x = Math.imul(x, 3266489909); x ^= x >>> 16; return (x >>> 0) / 4294967295; }
+function assignStrat(m) {
+  var top = {};
+  if (m !== 'scratch') order.slice().sort(function (a, b) { return countries[b].power - countries[a].power; }).slice(0, 8).forEach(function (i) { top[i] = 1; });
+  order.forEach(function (id) {
+    var r = hashM('s' + id);
+    countries[id].st = top[id] ? 'gp' : (m === 'scratch' && hashM('g' + id) < 0.1) ? 'gp' : r < 0.3 ? 'exp' : r < 0.55 ? 'def' : r < 0.78 ? 'trd' : 'reg';
+  });
+}
+function tradeCount(e) { return e === G.player ? Object.keys(G.deals).filter(function (o) { return G.deals[o].trade; }).length : Object.keys((G.tnet || {})[e] || {}).length; }
+function tnetInc(e, base) { var s = 0; Object.keys((G.tnet || {})[e] || {}).forEach(function (p) { s += 0.12 * (base[p] || 0); }); return s; }
+function aiTrade(e, neigh, st) {
+  if (tradeCount(e) >= 5) return;
+  var pool = {}; Object.keys(neigh).forEach(function (o) { pool[o] = 1; });
+  if (st === 'trd' && SZ) { var ks = Object.keys(SZ); for (var i = 0; i < 4; i++) pool[ks[Math.floor(Math.random() * ks.length)]] = 1; }
+  var cand = null, cs = 0;
+  Object.keys(pool).forEach(function (o) {
+    if (o === e || o === G.player || tradeCount(o) >= 5 || (G.tnet[e] && G.tnet[e][o])) return;
+    var r = rel(e, o); if (r >= 50 && r > cs) { cs = r; cand = o; }
+  });
+  if (!cand) return;
+  (G.tnet[e] = G.tnet[e] || {})[cand] = G.day; (G.tnet[cand] = G.tnet[cand] || {})[e] = G.day; bump(e, cand, 3);
+}
+/* ---------- القوة البحرية والمناطق البحرية ---------- */
+var LANDLOCKED = 'AF AM AT AZ BY BT BO BW BF BI CF TD CZ SZ ET HU KZ XK KG LA LS LU MW ML MD MN NP NE MK PY RW RS SK SS TJ TM UG UZ ZM ZW'.split(' ');
+var NAVY_BASE = 35, NAVY_K = 1.5, NAVY_MAX = 12, ZN = {}, zEls = {}, selZone = null, ZONE_MAX = 4, ZONE_HIT = 0.75, ZONE_LOCK = 4;
+var ZONE_NAMES = ['حقل نفط بحري', 'مصائد الأسماك الكبرى', 'حقل الغاز العميق', 'مناجم قاع المحيط', 'ممر الشحن الذهبي', 'جزر اللؤلؤ', 'حقل الغاز الشمالي', 'منصّات الطاقة', 'مياه الصيد الغنية', 'كنز الأعماق'];
+function maritime(id) { return LANDLOCKED.indexOf(id) < 0; }
+function navalBase(id) { var c = countries[id]; return maritime(id) ? 3 + Math.sqrt(c.gdp) * 0.25 + Math.sqrt(c.troops) * 0.4 : 0; }
+function navalLv(e) { return e === G.player ? (G.navy || 0) : ((G.up && G.up[e] && G.up[e].n) || 0); }
+/* القوة البحرية ثابتة لا تزيد بالغزو: أساسها دولتك الأصلية، وتنمو بترقية الأسطول فقط، وتنقص بقدر ما تحتفظ به من مناطق بحرية */
+function nbOf(e) { G.nb = G.nb || {}; if (G.nb[e] == null) G.nb[e] = countries[e] ? navalBase(e) : 0; return G.nb[e]; }
+function zonesHeld(e) { var n = 0; Object.keys(G.zown || {}).forEach(function (i) { if (G.zown[i] === e && ZN[i]) n++; }); return n; }
+function navalOf(e) {
+  if (!terrOf(e).some(maritime)) return 0;
+  return nbOf(e) * (1 + 0.4 * navalLv(e)) * Math.pow(ZONE_HIT, zonesHeld(e));
+}
+function navyCost(e) { return Math.round(NAVY_BASE * Math.pow(NAVY_K, navalLv(e)) * (e === G.player ? HARD.cost : 1 + 0.1 * (terrOf(e).length - 1))); }
+function zoneInc(e) { var s = 0; Object.keys(G.zown || {}).forEach(function (i) { if (G.zown[i] === e && ZN[i]) s += ZN[i].inc; }); return s; }
+function zoneCost(i) { return Math.round((50 + ZN[i].req * 1.5) * (G.zown[i] ? 1.5 : 1)); }
+function zoneLock(i) { var z = ZN[i]; return z && z.lock != null ? Math.max(0, z.lock - G.day) : 0; }
+function canTake(e, i) {
+  var z = ZN[i], o = G.zown[i], n = navalOf(e), cost = zoneCost(i);
+  if (o === e) return { ok: false, nav: false, why: 'تسيطر على هذه المنطقة بالفعل.' };
+  if (o && zoneLock(i) > 0) return { ok: false, nav: false, why: 'المنطقة محمية من الانتزاع ' + zoneLock(i) + ' أيام أخرى بعد استيلاء ' + on(o) + ' عليها.' };
+  if (n <= 0) return { ok: false, nav: false, why: 'لا تملك قوة بحرية (دولتك غير ساحلية أو فقدت سواحلها).' };
+  if (!o && n < z.req) return { ok: false, nav: false, why: 'قوتك البحرية (' + fmtD(n) + ') أقل من الأسطول المطلوب (' + fmtD(z.req) + '). رقِّ الأسطول من لوحة الاقتصاد.' };
+  if (o && n <= navalOf(o)) return { ok: false, nav: false, why: 'قوة ' + on(o) + ' البحرية (' + fmtD(navalOf(o)) + ') تفوق قوتك (' + fmtD(n) + '). لا تُنتزع المنطقة إلا بأسطول أقوى.' };
+  return { ok: G.R[e] >= cost, nav: true, why: G.R[e] >= cost ? '' : 'مواردك لا تكفي (' + fmtN(cost) + ').' };
+}
+function takeZone(e, i) {
+  var z = ZN[i], prev = G.zown[i], cost = zoneCost(i);
+  G.R[e] = Math.max(0, G.R[e] - cost); G.zown[i] = e; z.lock = G.day + ZONE_LOCK; G.dirty = true;
+  if (prev && prev !== e) bump(prev, e, -10);
+  var A = on(e) + (e === G.player ? ' (أنت)' : '');
+  if (e === G.player) logPush('سيطرت على «' + z.name + '»' + (prev ? ' بعد انتزاعها من ' + on(prev) : '') + ' — تراجعت قوتك البحرية إلى ' + fmtD(navalOf(e)) + ' لانتشار أسطولك فيها.', 'good');
+  else if (prev === G.player) logPush('تنبيه! ' + on(e) + ' انتزعت منك «' + z.name + '» بأسطول أقوى.', 'alert');
+  else logPush(A + ' سيطرت على «' + z.name + '»' + (prev ? ' بعد انتزاعها من ' + on(prev) : '') + '.', 'war');
+  if (zEls[i]) { var b = document.createElementNS(NSV, 'circle'); b.setAttribute('r', 8); b.setAttribute('class', 'boom'); zEls[i].appendChild(b); setTimeout(function () { if (b.parentNode) b.parentNode.removeChild(b); }, 800); }
+  fxZone(i, e);
+}
+function aiNaval(e, ts, my, reserve, st) {
+  var n = navalOf(e); if (n <= 0 || !Object.keys(ZN).length) return false;
+  var best = -1, bv = 0, lack = false, spare = my - reserve * 0.3;
+  Object.keys(ZN).forEach(function (k) {
+    var i = +k, z = ZN[k];
+    if (G.zown[i] === e) return;
+    var c = canTake(e, i);
+    if (!c.nav) { lack = true; return; }
+    var cost = zoneCost(i); if (cost > spare) return;
+    var v = z.inc / cost * (G.zown[i] === G.player ? 1.3 : 1); if (v > bv) { bv = v; best = i; }
+  });
+  var p = 0.5 + (st === 'trd' || st === 'reg' ? 0.3 : 0);
+  if (best >= 0 && Math.random() < p) { takeZone(e, best); return true; }
+  var u = upOf(e), cst = navyCost(e), want = (st === 'trd' || st === 'reg' || st === 'gp') ? 0.4 : 0.2;
+  if (lack && (u.n || 0) < NAVY_MAX && cst <= my - reserve * 0.5 && Math.random() < want) { u.n = (u.n || 0) + 1; G.R[e] -= cst; return true; }
+  return false;
+}
+function inRing(x, y, ring) { var c = false; for (var i = 0, j = ring.length - 1; i < ring.length; j = i++) { var a = ring[i], b = ring[j]; if ((a[1] > y) !== (b[1] > y) && x < (b[0] - a[0]) * (y - a[1]) / (b[1] - a[1]) + a[0]) c = !c; } return c; }
+var _rb = null;
+/* نقطة عشوائية في البحر بعيدة عن اليابسة وعن المناطق الأخرى */
+function seaPoint() {
+  if (!base) return null;
+  if (!_rb) {
+    _rb = {};
+    order.forEach(function (id) {
+      _rb[id] = countries[id].rings.map(function (ring) {
+        var x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+        ring.forEach(function (p) { if (p[0] < x0) x0 = p[0]; if (p[0] > x1) x1 = p[0]; if (p[1] < y0) y0 = p[1]; if (p[1] > y1) y1 = p[1]; });
+        return { x0: x0, y0: y0, x1: x1, y1: y1 };
+      });
+    });
+  }
+  function isSea(x, y, clr) {
+    for (var k = 0; k < order.length; k++) {
+      var id = order[k], rings = countries[id].rings;
+      for (var r = 0; r < rings.length; r++) {
+        var b = _rb[id][r];
+        if (x < b.x0 - clr || x > b.x1 + clr || y < b.y0 - clr || y > b.y1 + clr) continue;
+        if (inRing(x, y, rings[r])) return false;
+        var ring = rings[r];
+        for (var i = 0; i < ring.length; i++) if (Math.hypot(ring[i][0] - x, ring[i][1] - y) < clr) return false;
+      }
+    }
+    return true;
+  }
+  var clr = base.w * 0.03, sep = base.w * 0.11, ids = Object.keys(ZN);
+  for (var t = 0; t < 700; t++) {
+    if (t === 400) { clr *= 0.5; sep *= 0.6; }
+    var x = base.x + base.w * (0.03 + 0.94 * Math.random()), y = base.y + base.h * (0.12 + 0.74 * Math.random());
+    if (ids.some(function (k) { return Math.hypot(ZN[k].x - x, ZN[k].y - y) < sep; })) continue;
+    if (isSea(x, y, clr)) return { x: x, y: y };
+  }
+  return null;
+}
+function makeZoneEl(z, fresh) {
+  var g = $('zones'), el = document.createElementNS(NSV, 'g'); el.setAttribute('data-zone', z.id);
+  var ti = document.createElementNS(NSV, 'title'); ti.textContent = z.name + ' — +' + z.inc + ' مورد/يوم'; el.appendChild(ti);
+  var zi = document.createElementNS(NSV, 'g'); zi.setAttribute('class', 'zi' + (fresh ? ' fresh' : ''));
+  var ring = document.createElementNS(NSV, 'circle'); ring.setAttribute('r', 7.5); ring.setAttribute('class', 'ring'); zi.appendChild(ring);
+  var c = document.createElementNS(NSV, 'circle'); c.setAttribute('r', 5); zi.appendChild(c);
+  var tx = document.createElementNS(NSV, 'text'); tx.textContent = '⚓'; zi.appendChild(tx);
+  el.appendChild(zi); g.appendChild(el); zEls[z.id] = el;
+  if (fresh) setTimeout(function () { zi.classList.remove('fresh'); }, 1000);
+  return el;
+}
+/* منطقة جديدة في مكان عشوائي، بمخزون موارد محدود ومهلة ظهور محدودة */
+function spawnZone(quiet) {
+  var pt = seaPoint(); if (!pt) return false;
+  var id = G.zn = (G.zn || 0) + 1, inc = 9 + Math.round(Math.random() * 7);
+  var z = { id: id, x: pt.x, y: pt.y, name: ZONE_NAMES[Math.floor(Math.random() * ZONE_NAMES.length)], inc: inc, req: 30 + Math.round(Math.random() * 30), left: Math.round(inc * (30 + Math.random() * 20)), exp: G.day + 20 + Math.floor(Math.random() * 10) };
+  G.zl[id] = z; ZN = G.zl;
+  if (!quiet) {
+    makeZoneEl(z, true); refreshZones(); fxRings(z.x, z.y, '#5cc8ff', 2, 13);
+    logPush('ظهرت منطقة بحرية جديدة «' + z.name + '» (+' + inc + ' مورد/يوم) وستختفي إن لم يستولِ عليها أحد.', 'good');
+    G.dirty = true;
+  }
+  return true;
+}
+function removeZone(k, why) {
+  var z = ZN[k]; if (!z) return;
+  var o = G.zown[k], el = zEls[k];
+  delete ZN[k]; delete G.zown[k]; delete zEls[k];
+  if (selZone != null && +selZone === +k) selZone = null;
+  if (el) {
+    var zi = el.querySelector('.zi'); if (zi) zi.classList.add('gone');
+    el.style.pointerEvents = 'none';
+    fxRings(z.x, z.y, '#9db4bb', 1, 9);
+    setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 800);
+  }
+  if (why === 'deplete') logPush('نضبت موارد «' + z.name + '» واختفت من البحر' + (o ? ' (كانت تحت سيطرة ' + on(o) + (o === G.player ? ' — أي أنت' : '') + ')' : '') + '.', o === G.player ? 'bad' : '');
+  else logPush('اختفت «' + z.name + '» دون أن تستولي عليها أي دولة.', '');
+  G.dirty = true;
+}
+/* كل يوم: استخراج الموارد من المناطق المحتلة حتى تنضب، واختفاء الحرّة بعد مهلتها، وظهور مناطق جديدة */
+function zoneTick() {
+  if (!base) return;
+  G.zl = G.zl || {}; ZN = G.zl;
+  Object.keys(ZN).forEach(function (k) {
+    var z = ZN[k], o = G.zown[k];
+    if (o && !terrOf(o).length) { delete G.zown[k]; o = null; z.exp = G.day + 10; }
+    if (o) { z.left -= z.inc; if (z.left <= 0) removeZone(k, 'deplete'); }
+    else if (G.day >= z.exp) removeZone(k, 'expire');
+  });
+  if (Object.keys(ZN).length < ZONE_MAX && G.day >= (G.znext || 0)) G.znext = G.day + (spawnZone(false) ? 6 + Math.floor(Math.random() * 10) : 3);
+}
+function initZones() {
+  var g = $('zones'); while (g.firstChild) g.removeChild(g.firstChild);
+  zEls = {}; selZone = null; G.zl = G.zl || {}; ZN = G.zl;
+  if (!base) return;
+  Object.keys(G.zown || {}).forEach(function (k) { if (!ZN[k]) delete G.zown[k]; });
+  if (!Object.keys(ZN).length) { spawnZone(true); spawnZone(true); G.znext = G.day + 8; }
+  Object.keys(ZN).forEach(function (k) { makeZoneEl(ZN[k], false); });
+  refreshZones();
+}
+function refreshZones() {
+  if (!view || !G || !G.zown || !Object.keys(ZN).length) return;
+  var s = view.w / 300;
+  Object.keys(ZN).forEach(function (k) {
+    var z = ZN[k], el = zEls[k]; if (!el) return;
+    var o = G.zown[k];
+    el.setAttribute('transform', 'translate(' + z.x + ',' + z.y + ') scale(' + s + ')');
+    el.setAttribute('class', 'zn' + (o === G.player && G.phase === 'play' ? ' own' : '') + (+selZone === +k && selZone != null ? ' sel' : ''));
+    el.querySelector('circle:not(.ring)').style.fill = (o && o !== G.player) ? 'hsl(' + Math.floor(hash01('h' + o) * 360) + ' 42% var(--el))' : '';
+  });
+}
+function selectZone(i) { sel = null; selZone = i; lastResult = ''; renderAll(); }
+function zoneCard() {
+  var z = ZN[selZone], o = G.zown[selZone], pl = G.phase === 'play';
+  return '<div class="head"><h2>⚓ ' + esc(z.name) + '</h2><div class="tags"><span class="tag good">+' + z.inc + ' مورد/يوم</span>' +
+    (o ? '<span class="tag ' + (o === G.player ? 'own' : 'warn') + '">' + (o === G.player ? 'تحت سيطرتك' : 'تسيطر عليها ' + esc(on(o))) + '</span>' : '<span class="tag mid">غير محتلة</span>') + '</div></div>' +
+    '<section><h3>منطقة بحرية غنية بالموارد</h3><dl>' +
+    kv('الأسطول المطلوب (منطقة حرة)', fmtD(z.req)) +
+    (o ? kv('القوة البحرية للمسيطر', fmtD(navalOf(o))) : '') +
+    (pl ? kv('قوتك البحرية', fmtD(navalOf(G.player))) : '') +
+    kv('تكلفة السيطرة', fmtN(zoneCost(selZone))) +
+    (o && zoneLock(selZone) > 0 ? kv('الحماية من الانتزاع', zoneLock(selZone) + ' أيام', 'لا يستطيع أحد انتزاعها الآن') : '') +
+    kv('المخزون المتبقي', fmtN(z.left), 'يكفي ' + Math.ceil(z.left / z.inc) + ' يوماً من الاستخراج') +
+    (o ? '' : kv('تختفي خلال', Math.max(0, z.exp - G.day) + ' يوماً', 'إن لم يستولِ عليها أحد')) + '</dl></section>' +
+    '<p class="muted">تحتاج الدول الساحلية إلى أسطول كبير للسيطرة على هذه المناطق. ومن تسيطر عليها تنتزعها دولة أخرى متى فاقت قوتها البحرية قوتها. وتنقص قوة الدولة البحرية بنسبة ' + Math.round((1 - ZONE_HIT) * 100) + '% عن كل منطقة تحتفظ بها، فلا تحتكرها دولة واحدة. وبعد استيلاء دولة على منطقة لا يستطيع أحد انتزاعها منها لمدة ' + ZONE_LOCK + ' أيام. وتزول المنطقة حين تنضب مواردها.</p>';
+}
+function zoneAct() {
+  var el = $('act'), i = selZone;
+  if (G.phase !== 'play') { el.innerHTML = ''; return; }
+  var o = G.zown[i], c = canTake(G.player, i), cost = zoneCost(i), res = lastResult ? '<p class="result">' + lastResult + '</p>' : '';
+  el.innerHTML = (c.nav ? '<button class="btn primary" id="zTake" data-cost="' + cost + '"' + (c.ok ? '' : ' disabled') + '>' + (o ? 'انتزاع المنطقة' : 'السيطرة على المنطقة') + ' (التكلفة ' + fmtN(cost) + ')</button>' + (c.ok ? '' : '<p class="muted">' + c.why + '</p>') : '<p class="muted">' + c.why + '</p>') + res;
+  var b = $('zTake'); if (b) b.addEventListener('click', function () { if (!canTake(G.player, i).ok) return; takeZone(G.player, i); lastResult = ''; afterChange(); });
+}
+function navyHtml() {
+  var n = navalOf(G.player), lv = G.navy || 0, cost = navyCost(G.player);
+  if (n <= 0) return '<div class="prot"><h3>القوة البحرية</h3><p class="hint">لا تملك قوة بحرية: دولتك غير ساحلية أو فقدت سواحلها.</p></div>';
+  return '<div class="prot"><h3>القوة البحرية</h3><p class="hint">قوتك البحرية ' + fmtD(n) + ' (المستوى ' + lv + '). تلزم لانتزاع المناطق البحرية الغنية، ولا تزيد بالغزو بل بترقية الأسطول فقط' + (zonesHeld(G.player) ? ' (مخفَّضة ' + Math.round((1 - Math.pow(ZONE_HIT, zonesHeld(G.player))) * 100) + '% لانتشارك في المناطق البحرية)' : '') + '. تتضاعف تكلفة كل ترقية ×' + NAVY_K + '.</p>' +
+    (lv >= NAVY_MAX ? '<p class="muted">بلغ الأسطول أقصى مستوى.</p>' : '<button class="btn primary" data-navy="1" data-cost="' + cost + '">ترقية الأسطول ← المستوى ' + (lv + 1) + ' (التكلفة ' + fmtN(cost) + ')</button>') + '</div>';
+}
+/* ---------- مساحة الأهداف ---------- */
+function areaC(id) {
+  var c = countries[id];
+  if (c.area == null) {
+    var s = 0;
+    c.rings.forEach(function (r) { var a = 0; for (var i = 0, n = r.length; i < n; i++) { var p = r[i], q = r[(i + 1) % n]; a += p[0] * q[1] - q[0] * p[1]; } s += Math.abs(a) / 2; });
+    c.area = Math.max(s, 1);
+  }
+  return c.area;
+}
+function areaMult(ts, id) {
+  var mine = 0; ts.forEach(function (x) { mine += areaC(x); });
+  var r = areaC(id) / Math.max(mine, 1);
+  return r > 1 ? Math.min(3.2, 1 + 0.45 * Math.log(r)) : 1;
+}
+/* ---------- الجبهات المضادة وإنهاء التجارة ---------- */
+function coalition() {
+  var sz = {}; order.forEach(function (id) { sz[G.owner[id]] = (sz[G.owner[id]] || 0) + 1; });
+  var ks = Object.keys(sz).sort(function (a, b) { return sz[b] - sz[a]; }), L = ks[0], second = sz[ks[1]] || 0;
+  if (!L || sz[L] < 4 || sz[L] < second * 1.4) { G.leader = null; return; }
+  G.leader = L;
+  var cand = ks.filter(function (o) { return o !== L && o !== G.player && !isAllied(o, L) && rel(o, L) < 60 && allyCount(o) < 4; }).sort(function () { return Math.random() - 0.5; });
+  for (var i = 0; i < cand.length; i++) for (var j = i + 1; j < cand.length; j++) {
+    var a = cand[i], b = cand[j];
+    if (isAllied(a, b) || rel(a, b) < 45) continue;
+    makePact(a, b); bump(a, L, -3); bump(b, L, -3); G.focus = G.focus || {}; G.focus[a] = G.focus[b] = G.day + 12;
+    logPush('تتشكّل جبهة مضادة ضد ' + on(L) + (L === G.player ? ' (أنت)' : '') + ': ' + on(a) + ' و' + on(b) + '.', L === G.player ? 'alert' : 'war');
+    return;
+  }
+}
+var noteLines = [];
+function showNotice(lines) {
+  noteLines = noteLines.concat(lines); var n = $('notice'); n.hidden = false; G.hold = true;
+  n.innerHTML = '<div class="ncard" role="alertdialog" aria-modal="true"><h2>انتهت اتفاقية تجارية</h2>' + noteLines.map(function (l) { return '<p>' + esc(l) + '</p>'; }).join('') + '<button class="btn primary" id="nok">حسناً</button></div>';
+  $('nok').addEventListener('click', function () { n.hidden = true; noteLines = []; G.hold = !$('battle').hidden; G.dirty = true; });
+  $('nok').focus();
+}
+function checkTrades() {
+  var lines = [];
+  Object.keys(G.deals).forEach(function (e) {
+    var d = G.deals[e];
+    if (d.trade && rel(G.player, e) < 40) {
+      delete d.trade; var m = 'أُلغيت اتفاقية التجارة بينك وبين ' + on(e) + ' بسبب توتر العلاقات (' + rel(G.player, e) + '%).';
+      lines.push(m); logPush(m, 'bad');
+    }
+  });
+  Object.keys(G.tnet || {}).forEach(function (a) {
+    Object.keys(G.tnet[a] || {}).forEach(function (b) { if (a < b && rel(a, b) < 40) { delete G.tnet[a][b]; if (G.tnet[b]) delete G.tnet[b][a]; } });
+  });
+  if (lines.length) { cleanDeals(); showNotice(lines); }
+}
+/* تطوّر الدول تلقائياً في نمط «ابدأ من الصفر»: بنية تحتية + حماية + جيش */
+var AI_PROT_MAX = 12, AI_ARMY_MAX = 14, AI_PROT_K = 0.3;
+function upOf(e) { G.up = G.up || {}; return (G.up[e] = G.up[e] || { a: 0, p: 0 }); }
+function protLv(e) { return e === G.player ? (G.prot || 0) : ((G.up && G.up[e]) ? G.up[e].p : 0); }
+function armyLv(e) { return e === G.player ? (G.armyLv || 0) : ((G.up && G.up[e]) ? G.up[e].a : 0); }
+function aiArmyCost(e, n) { return Math.round(ARMY_BASE * 0.8 * Math.pow(ARMY_COST_K, armyLv(e)) * (1 + 0.1 * (n - 1))); }
+function aiProtCost(e, n) { return Math.round(25 * Math.pow(1.7, protLv(e)) * (1 + 0.1 * (n - 1))); }
+function aiInvest(e, ts, my, reserve, threat, aggr) {
+  var n = ts.length, spare = my - reserve * 0.5, u = upOf(e), day = G.day, avg = 0;
+  ts.forEach(function (id) { avg += G.dev[id] || 0; }); avg /= n;
+  var st = stratOf(e), tDev = Math.min(5, 1 + day / AIK.dd + (st === 'trd' ? 0.5 : 0)), tProt = Math.min(AI_PROT_MAX, day / AIK.dp + threat / 15 + (st === 'def' ? 1.5 : 0)), tArmy = Math.min(AI_ARMY_MAX, day / AIK.da + aggr * AIK.ab + threat / 20 + (st === 'exp' ? 1 : 0));
+  var opts = [], bd = null, bg = 0;
+  ts.forEach(function (id) { if ((G.dev[id] || 0) >= 5) return; var g = terrInc(id) * 0.25 / devCost(id); if (g > bg) { bg = g; bd = id; } });
+  if (bd) opts.push({ k: 'dev', id: bd, cost: devCost(bd), need: tDev - avg });
+  if (u.p < AI_PROT_MAX) opts.push({ k: 'prot', cost: aiProtCost(e, n), need: tProt - u.p });
+  if (u.a < AI_ARMY_MAX) opts.push({ k: 'army', cost: aiArmyCost(e, n), need: tArmy - u.a });
+  opts = opts.filter(function (o) { return o.cost <= spare && o.need >= (o.k === 'dev' ? 0.3 : 0.8); }).sort(function (a, b) { return b.need - a.need; });
+  var o = opts[0]; if (!o) return;
+  G.R[e] -= o.cost;
+  if (o.k === 'dev') G.dev[o.id] = (G.dev[o.id] || 0) + 1;
+  else if (o.k === 'prot') u.p++;
+  else { u.a++; ts.forEach(function (id) { countries[id].troops *= ARMY_GROW; }); }
+}
+function aiTurn() {
+  var inc = {};
+  order.forEach(function (id) { var o = G.owner[id]; inc[o] = (inc[o] || 0) + terrInc(id); });
+  var boost = G.mode === 'scratch' ? 1.05 : 1 + Math.min(0.5, G.day / 900), b0 = Object.assign({}, inc);
+  SZ = {}; order.forEach(function (id) { SZ[G.owner[id]] = (SZ[G.owner[id]] || 0) + 1; });
+  Object.keys(inc).forEach(function (e) { inc[e] += zoneInc(e) + tnetInc(e, b0); });
+  Object.keys(inc).forEach(function (e) { if (e !== G.player) G.R[e] += inc[e] * boost; });
+  G.offers = G.offers.filter(function (o) { return G.day - o.day < 25; });
+  var pa = aggOf(G.player), ready = Object.keys(inc).filter(function (e) { return e !== G.player && (G.cool[e] || 0) <= G.day; });
+  /* دول مجاورة للاعب (وحلفاء المهاجمين) تفكّر بوتيرة أعلى */
+  var near = {};
+  terrOf(G.player).forEach(function (id) { neighborsOf(id).forEach(function (n) { var o = G.owner[n]; if (o !== G.player && !isAllied(o, G.player)) near[o] = 1; }); });
+  var first = ready.filter(function (e) { return near[e] || (G.focus && G.focus[e] > G.day); }).sort(function () { return Math.random() - 0.5; }).slice(0, 3);
+  first.forEach(function (e) { ready.splice(ready.indexOf(e), 1); G.cool[e] = G.day + 2 + Math.floor(Math.random() * 3); aiThink(e, pa, true); });
+  for (var k = first.length; k < 8 && ready.length; k++) {
+    var e = ready.splice(Math.floor(Math.random() * ready.length), 1)[0];
+    G.cool[e] = G.day + 3 + Math.floor(Math.random() * 5);
+    aiThink(e, pa, false);
+  }
+}
+function dayTick() {
+  G.day++;
+  G.wb = Math.min(AIK.wcap, (G.wb || 0) + AIK.wr);
+  G.stab = clamp(G.stab + TAXD[G.tax], 0, 100);
+  if (G.day % 5 === 0) Object.keys(mod).forEach(function (k) { mod[k] = Math.abs(mod[k]) < 1 ? 0 : mod[k] * 0.97; });
+  if (G.mode === 'scratch' && G.day % 10 === 0) computeRanks();
+  refreshPower();
+  checkTrades();
+  if (G.day % 10 === 0) coalition();
+  Object.keys(G.pacts).forEach(function (a) {
+    Object.keys(G.pacts[a]).forEach(function (b) {
+      if (a < b && G.pacts[a][b] === true) G.pacts[a][b] = G.pacts[b][a] = G.day + 1;
+      if (a < b && G.pacts[a][b]) {
+        var old = G.day + 1 - G.pacts[a][b] >= 365;
+        if (old || rel(a, b) < 30) { delete G.pacts[a][b]; delete G.pacts[b][a]; logPush((old ? 'انتهت مدة التحالف بين ' : 'انهار التحالف بين ') + on(a) + ' و' + on(b) + '.', ''); }
+      }
+    });
+  });
+  Object.keys(G.deals).forEach(function (e) {
+    var d = G.deals[e];
+    ['ally', 'tribute'].forEach(function (k) {
+      if (d[k] === true) d[k] = G.day + 1;
+      if (d[k] && G.day + 1 - d[k] >= 365) { delete d[k]; logPush('انتهت مدة ' + (k === 'ally' ? 'التحالف' : 'اتفاقية الجزية') + ' مع ' + on(e) + ' بعد عام. يمكنك تجديدها.', 'bad'); }
+    });
+  });
+  cleanDeals();
+  zoneTick();
+  aiTurn();
+}
+function dLeft(v) { return v === true ? 365 : Math.max(0, 365 - (G.day + 1 - v)); }
+function answerOffer(i, yes) {
+  var o = G.offers.splice(i, 1)[0];
+  if (!o) return;
+  if (yes && terrOf(o.from).length) {
+    var d = G.deals[o.from] || (G.deals[o.from] = {});
+    delete d.tribute; d.ally = G.day + 1; bump(G.player, o.from, 8);
+    logPush('تحالفت مع ' + on(o.from) + '.', 'good'); react(G.player, o.from, 'ally'); fxAlliance(G.player, o.from);
+  } else {
+    bump(G.player, o.from, -2); (G.rej = G.rej || {})[o.from] = G.day;
+    logPush('رفضتَ عرض تحالف ' + on(o.from) + '؛ لن تستطيع تجديد عرضها قبل مرور عام.', '');
+  }
+  if (!G.offers.length) { if (G.offerResumeSpeed != null) G.speed = G.offerResumeSpeed; G.offerResumeSpeed = null; }
+  G.dirty = true; renderAll();
+}
+function startAs(id) {
+  refreshPower();
+  G.phase = 'play'; G.player = id; G.army = Math.max(5, countries[id].troops); G.R[id] = G.mode === 'scratch' ? 16 : 32; G.speed = 1; G.log = [];
+  G.nb = {}; order.forEach(function (k) { G.nb[k] = navalBase(k); });
+  logPush('تولّيت قيادة ' + nm(id) + '. بدأ الزمن بالجريان.', 'good');
+}
+
+/* ---------- الاتفاقيات ---------- */
+function deal(kind) {
+  var e = G.owner[sel], d = G.deals[e] || (G.deals[e] = {}), r = rel(G.player, e);
+  if (kind === 'ally') {
+    if (d.ally) {
+      var key = e + ':ally';
+      if (confirmEnd !== key) {
+        confirmEnd = key; lastResult = '';
+        setTimeout(function () { if (confirmEnd === key) { confirmEnd = null; lastResult = ''; if (G && G.phase === 'play') renderAct(); } }, 7000);
+        afterChange(); return;
+      }
+      confirmEnd = null; var lostR = G.R[G.player] * 0.5; G.R[G.player] -= lostR; delete d.ally; bump(G.player, e, -12);
+      logPush('أنهيت التحالف مع ' + nm(e) + ' قبل موعده فخسرتَ نصف مواردك (' + fmtN(lostR) + ').', 'bad'); lastResult = 'أُنهي التحالف وخسرتَ ' + fmtN(lostR) + ' مورد، وتراجعت العلاقات.';
+    }
+    else if (r >= allyMin()) { d.ally = G.day + 1; bump(G.player, e, 8); logPush('تحالفت مع ' + nm(e) + '. التجارة بينكما تضاعفت.', 'good'); lastResult = 'قبلت ' + esc(nm(e)) + ' التحالف.'; react(G.player, e, 'ally'); fxAlliance(G.player, e); }
+    else lastResult = 'رفضت ' + esc(nm(e)) + ' التحالف: العلاقات لا تكفي (تحتاج ' + allyMin() + ' على الأقل).';
+  } else if (kind === 'trade') {
+    if (d.trade) { delete d.trade; lastResult = 'أُلغيت اتفاقية التجارة.'; logPush('ألغيت التجارة مع ' + nm(e) + '.', ''); }
+    else if (r >= 40) { d.trade = true; bump(G.player, e, 3); logPush('وقّعت اتفاقية تجارة مع ' + nm(e) + '.', 'good'); lastResult = 'بدأت التجارة مع ' + esc(nm(e)) + ' وترتفع مواردك يومياً.'; }
+    else lastResult = 'ترفض ' + esc(nm(e)) + ' التجارة معك بسبب توتر العلاقات.';
+  } else if (kind === 'tribute') {
+    if (d.tribute) { delete d.tribute; bump(G.player, e, -10); logPush('ألغيت اتفاقية الجزية مع ' + nm(e) + '.', 'bad'); lastResult = 'أُلغيت الاتفاقية وتضررت العلاقات.'; }
+    else if (atkStr(G.player, G.R[G.player], sel) >= defRes(sel, G.player) * 0.9) { d.tribute = G.day + 1; bump(G.player, e, -8); logPush(nm(e) + ' وافقت على دفع الجزية مقابل عدم الاعتداء.', 'good'); lastResult = 'وافقت ' + esc(nm(e)) + ' على دفع الجزية مقابل ألا تغزوها.'; react(G.player, e, 'tribute'); }
+    else lastResult = 'ترفض ' + esc(nm(e)) + ' دفع الجزية: لست قوياً بما يكفي لتخيفها.';
+  }
+  cleanDeals(); G.dirty = true; afterChange();
+}
+var $ = function (id) { return document.getElementById(id); };
+var svg = $('map'), landG = $('land'), tip = $('tip');
+var pathEls = {}, sel = null, base = null, view = null, listFilter = { q: '', sort: 'power', show: 'all' };
+
+function buildMap() {
+  var frag = document.createDocumentFragment();
+  order.forEach(function (id) {
+    var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    p.setAttribute('d', countries[id].d);
+    p.setAttribute('data-id', id);
+    p.setAttribute('class', 'c');
+    pathEls[id] = p;
+    frag.appendChild(p);
+  });
+  landG.appendChild(frag);
+  var bb = landG.getBBox();
+  var padX = bb.width * 0.015, padY = bb.height * 0.02;
+  base = { x: bb.x - padX, y: bb.y - padY, w: bb.width + padX * 2, h: bb.height + padY * 2 };
+  fit();
+}
+function fit() {
+  if (!base) return;
+  var r = svg.getBoundingClientRect();
+  var ar = (r.width && r.height) ? r.width / r.height : base.w / base.h;
+  var w = Math.max(base.w, base.h * ar), h = w / ar;
+  view = { x: base.x + base.w / 2 - w / 2, y: base.y + base.h / 2 - h / 2, w: w, h: h, ar: ar, full: w };
+  applyView();
+}
+function applyView() {
+  var cxm = base.x + base.w / 2, cym = base.y + base.h / 2;
+  view.w = Math.max(view.full / 40, Math.min(view.full, view.w));
+  view.h = view.w / view.ar;
+  var mx = view.x + view.w / 2, my = view.y + view.h / 2;
+  mx = Math.max(base.x, Math.min(base.x + base.w, mx));
+  my = Math.max(base.y, Math.min(base.y + base.h, my));
+  if (view.w >= view.full * 0.999) { mx = cxm; my = cym; }
+  view.x = mx - view.w / 2; view.y = my - view.h / 2;
+  svg.setAttribute('viewBox', view.x + ' ' + view.y + ' ' + view.w + ' ' + view.h);
+  if (typeof refreshLabels === 'function') refreshLabels(false);
+  if (typeof refreshZones === 'function') refreshZones();
+  if (typeof drawRel === 'function') drawRel();
+}
+function zoomAt(factor, clientX, clientY) {
+  var r = svg.getBoundingClientRect();
+  var fx = clientX == null ? 0.5 : (clientX - r.left) / r.width;
+  var fy = clientY == null ? 0.5 : (clientY - r.top) / r.height;
+  var px = view.x + view.w * fx, py = view.y + view.h * fy;
+  var nw = Math.max(view.full / 40, Math.min(view.full, view.w * factor));
+  var nh = nw / view.ar;
+  view.x = px - nw * fx; view.y = py - nh * fy; view.w = nw; view.h = nh;
+  applyView();
+}
+
+/* pointer interaction: drag to pan, pinch to zoom, tap to select */
+var pointers = {}, drag = null, pinch = null, moved = 0, downId = null, downZone = null;
+function pdist() { var k = Object.keys(pointers); var a = pointers[k[0]], b = pointers[k[1]]; return Math.hypot(a.x - b.x, a.y - b.y) || 1; }
+svg.addEventListener('pointerdown', function (e) {
+  pointers[e.pointerId] = { x: e.clientX, y: e.clientY };
+  var n = Object.keys(pointers).length;
+  if (n === 1) {
+    drag = { x: e.clientX, y: e.clientY, vx: view.x, vy: view.y }; moved = 0;
+    var t = e.target.closest ? e.target.closest('path[data-id]') : null;
+    downId = t ? t.getAttribute('data-id') : null;
+    var zt = e.target.closest ? e.target.closest('g[data-zone]') : null; downZone = zt ? parseInt(zt.getAttribute('data-zone'), 10) : null;
+  } else if (n === 2) { pinch = { d: pdist(), w: view.w }; downId = null; downZone = null; moved = 99; drag = null; }
+});
+window.addEventListener('pointermove', function (e) {
+  var pt = pointers[e.pointerId];
+  if (pt) {
+    pt.x = e.clientX; pt.y = e.clientY;
+    if (pinch && Object.keys(pointers).length === 2) {
+      var k = Object.keys(pointers), a = pointers[k[0]], b = pointers[k[1]];
+      var target = pinch.w * pinch.d / pdist();
+      zoomAt(target / view.w, (a.x + b.x) / 2, (a.y + b.y) / 2);
+    } else if (drag) {
+      var dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+      moved = Math.max(moved, Math.hypot(dx, dy));
+      if (moved > 4) {
+        var r = svg.getBoundingClientRect();
+        var s = Math.max(view.w / r.width, view.h / r.height);
+        view.x = drag.vx - dx * s; view.y = drag.vy - dy * s; applyView();
+      }
+    }
+  }
+  if (e.pointerType === 'mouse') moveTip(e);
+});
+function endPointer(e, cancelled) {
+  if (!pointers[e.pointerId]) return;
+  delete pointers[e.pointerId];
+  var left = Object.keys(pointers).length;
+  if (left === 0) {
+    if (!cancelled && moved < 5 && downId) select(downId);
+    else if (!cancelled && moved < 5 && downZone != null) selectZone(downZone);
+    drag = null; pinch = null; downId = null; downZone = null;
+  } else if (left === 1) {
+    var k = Object.keys(pointers)[0];
+    drag = { x: pointers[k].x, y: pointers[k].y, vx: view.x, vy: view.y }; pinch = null; moved = 99;
+  }
+}
+window.addEventListener('pointerup', function (e) { endPointer(e, false); });
+window.addEventListener('pointercancel', function (e) { endPointer(e, true); });
+svg.addEventListener('wheel', function (e) { e.preventDefault(); zoomAt(e.deltaY > 0 ? 1.18 : 1 / 1.18, e.clientX, e.clientY); }, { passive: false });
+$('zin').addEventListener('click', function () { zoomAt(1 / 1.5); });
+$('zout').addEventListener('click', function () { zoomAt(1.5); });
+$('zreset').addEventListener('click', fit);
+var showRel = true;
+$('relToggle').addEventListener('click', function () {
+  showRel = !showRel;
+  $('rel').style.display = showRel ? '' : 'none';
+  $('relToggle').textContent = showRel ? 'إخفاء العلاقات' : 'إظهار العلاقات';
+  $('relToggle').classList.toggle('on', showRel);
+  $('relToggle').setAttribute('aria-pressed', String(showRel));
+});
+window.addEventListener('resize', function () { if (view && view.w >= view.full * 0.999) fit(); else if (view) { var r = svg.getBoundingClientRect(); view.ar = r.width / r.height; applyView(); } });
+
+/* tooltip */
+svg.addEventListener('pointerover', function (e) {
+  if (e.pointerType !== 'mouse') return;
+  var t = e.target.closest ? e.target.closest('path[data-id]') : null;
+  if (!t) { tip.hidden = true; return; }
+  var c = countries[t.getAttribute('data-id')], extra;
+  if (G.phase === 'select') extra = 'القوة ' + c.power + ' · الناتج ' + fmtMoney(c.gdp);
+  else extra = isMine(c.id) ? 'أرضك' : (G.owner[c.id] !== c.id ? 'تحت سيطرة ' + countries[G.owner[c.id]].name : (reachable(c.id) ? 'في المتناول' : 'خارج المتناول'));
+  tip.innerHTML = '<b>' + esc(c.name) + '</b><span>' + extra + '</span>';
+  tip.hidden = false;
+});
+svg.addEventListener('pointerleave', function () { tip.hidden = true; });
+function moveTip(e) {
+  if (tip.hidden) return;
+  var r = $('mapwrap').getBoundingClientRect();
+  var x = e.clientX - r.left + 14, y = e.clientY - r.top + 14;
+  if (x + 170 > r.width) x = e.clientX - r.left - 170;
+  tip.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+}
+/* ---------- الألوان ---------- */
+function refreshColors() {
+  var sizes = {};
+  order.forEach(function (id) { var o = G.owner[id]; sizes[o] = (sizes[o] || 0) + 1; });
+  order.forEach(function (id) {
+    var p = pathEls[id], o = G.owner[id], cls = 'c', st = '';
+    if (G.phase === 'play') {
+      if (o === G.player) cls += ' own';
+      else {
+        if (sizes[o] > 1) { cls += ' emp'; st = 'hsl(' + Math.floor(hash01('h' + o) * 360) + ' 42% var(--el))'; }
+        if (reachable(id)) cls += ' rch';
+      }
+    }
+    if (id === sel) cls += ' sel';
+    p.setAttribute('class', cls); p.style.fill = st;
+  });
+  if (sel && pathEls[sel]) landG.appendChild(pathEls[sel]);
+  refreshLabels(true); refreshZones();
+}
+
+/* ---------- أسماء الدول على الخريطة ---------- */
+var labG = $('labels'), labEls = {}, empEls = {}, labS = 0, labReady = false, LAB_PX = 9.5, NSV = 'http://www.w3.org/2000/svg';
+function bbW(c) { return c.bb.x1 - c.bb.x0; }
+function bbH(c) { return c.bb.y1 - c.bb.y0; }
+function prepLabels() {
+  order.forEach(function (id) {
+    var c = countries[id], best = null, ba = -1;
+    c.rings.forEach(function (ring) {
+      var x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+      ring.forEach(function (p) { if (p[0] < x0) x0 = p[0]; if (p[0] > x1) x1 = p[0]; if (p[1] < y0) y0 = p[1]; if (p[1] > y1) y1 = p[1]; });
+      var a = (x1 - x0) * (y1 - y0);
+      if (a > ba) { ba = a; best = { x0: x0, y0: y0, x1: x1, y1: y1 }; }
+    });
+    c.bb = best || { x0: c.cx, y0: c.cy, x1: c.cx, y1: c.cy };
+    var t = document.createElementNS(NSV, 'text');
+    t.setAttribute('class', 'lab'); t.setAttribute('text-anchor', 'middle'); t.setAttribute('dy', '.35em');
+    t.textContent = c.orig || c.name; t.style.display = 'none';
+    labG.appendChild(t); labEls[id] = t;
+  });
+  labReady = true;
+}
+/* أكبر كتلة متصلة من أراضي إمبراطورية ما، لتوضع عليها لافتة الاسم */
+function biggestPiece(ids) {
+  var inSet = {}, seen = {}, best = null, bestA = -1;
+  ids.forEach(function (i) { inSet[i] = 1; });
+  ids.forEach(function (st) {
+    if (seen[st]) return;
+    var comp = [], q = [st]; seen[st] = 1;
+    while (q.length) {
+      var u = q.pop(); comp.push(u);
+      neighborsOf(u).forEach(function (n) { if (inSet[n] && !seen[n]) { seen[n] = 1; q.push(n); } });
+    }
+    var a = 0; comp.forEach(function (i) { a += bbW(countries[i]) * bbH(countries[i]); });
+    if (a > bestA) { bestA = a; best = comp; }
+  });
+  return best || ids;
+}
+function refreshLabels(force) {
+  if (!labReady || !view || !G) return;
+  var r = svg.getBoundingClientRect(), s = view.w / (r.width || 900);
+  if (!force && Math.abs(s - labS) < s * 1e-4) return;
+  labS = s;
+  var fs = LAB_PX * s, play = G.phase === 'play', groups = {}, live = {};
+  order.forEach(function (id) { var o = G.owner[id]; (groups[o] = groups[o] || []).push(id); });
+  order.forEach(function (id) {
+    var el = labEls[id], c = countries[id], show = false;
+    if (!(play && groups[G.owner[id]].length > 1)) {
+      var w = (c.orig || c.name).length * 0.5 * fs;
+      show = bbW(c) >= w * 1.1 && bbH(c) >= fs * 1.4;
+    }
+    if (!show) { if (el.style.display !== 'none') el.style.display = 'none'; return; }
+    el.style.display = '';
+    el.setAttribute('x', (c.bb.x0 + c.bb.x1) / 2); el.setAttribute('y', (c.bb.y0 + c.bb.y1) / 2);
+    el.setAttribute('font-size', fs); el.setAttribute('stroke-width', 2.4 * s);
+  });
+  if (play) Object.keys(groups).forEach(function (o) {
+    var g = groups[o]; if (g.length < 2) return;
+    var comp = biggestPiece(g), sx = 0, sy = 0, sw = 0, x0 = 1e9, x1 = -1e9;
+    comp.forEach(function (i) {
+      var c = countries[i], w = bbW(c) * bbH(c) + 1e-6;
+      sx += (c.bb.x0 + c.bb.x1) / 2 * w; sy += (c.bb.y0 + c.bb.y1) / 2 * w; sw += w;
+      if (c.bb.x0 < x0) x0 = c.bb.x0; if (c.bb.x1 > x1) x1 = c.bb.x1;
+    });
+    var el = empEls[o];
+    if (!el) {
+      el = document.createElementNS(NSV, 'text');
+      el.setAttribute('class', 'lab emp'); el.setAttribute('text-anchor', 'middle'); el.setAttribute('dy', '.35em');
+      labG.appendChild(el); empEls[o] = el;
+    }
+    var name = on(o), f = Math.max(11 * s, Math.min(30 * s, (x1 - x0) * 0.8 / (name.length * 0.5)));
+    if (el.textContent !== name) el.textContent = name;
+    el.setAttribute('x', sx / sw); el.setAttribute('y', sy / sw);
+    el.setAttribute('font-size', f); el.setAttribute('stroke-width', 3.4 * s);
+    el.style.display = ''; live[o] = 1;
+  });
+  Object.keys(empEls).forEach(function (o) { if (!live[o]) empEls[o].style.display = 'none'; });
+}
+
+/* ---------- اللوحات ---------- */
+function bar(v, max) { return '<span class="bar" aria-hidden="true"><i style="width:' + Math.max(2, Math.min(100, v / max * 100)) + '%"></i></span>'; }
+function kv(label, val, extra) { return '<div class="kv"><dt>' + label + '</dt><dd>' + val + (extra ? ' <small>' + extra + '</small>' : '') + '</dd></div>'; }
+
+function renderCard() {
+  var el = $('card');
+  if (selZone != null && ZN[selZone]) { el.innerHTML = zoneCard(); return; }
+  if (!sel) {
+    el.innerHTML = '<h2>' + (G.phase === 'select' ? 'اختر دولتك الأولى' : 'اختر دولة') + '</h2>' +
+      '<p class="muted">' + (G.phase === 'select'
+        ? 'كل الدول رمادية. اضغط على أي دولة في الخريطة أو القائمة لتطّلع على اقتصادها وسكانها وجيشها وعلاقاتها، ثم ابدأ منها.'
+        : 'اضغط على دولة في الخريطة لتعقد معها الاتفاقيات أو تخطّط لغزوها. الموارد هي عملة الغزو، والوقت لا يتوقف.') + '</p>';
+    return;
+  }
+  var c = countries[sel], play = G.phase === 'play', owner = G.owner[sel], tags = '';
+  if (play && isMine(sel)) tags += '<span class="tag own">' + (sel === G.player ? 'وطنك' : 'أرض محتلة') + '</span>';
+  if (play && !isMine(sel) && owner !== sel) tags += '<span class="tag warn">تحت سيطرة ' + esc(nm(owner)) + '</span>';
+  if (c.nuke) tags += '<span class="tag warn">قوة نووية</span>';
+  if (STRAITS[sel]) tags += '<span class="tag good">ممر بحري +' + fmtD(strB(sel)) + ' مورد/يوم</span>';
+  if (play && owner !== G.player && allyCount(owner) > 0) tags += '<span class="tag good">لها ' + allyCount(owner) + ' حلفاء</span>';
+  if (!play) { var o = outlook(sel); tags += '<span class="tag ' + o.k + '">' + o.t + '</span>'; }
+  else if (!isMine(sel)) {
+    tags += reachable(sel) ? '<span class="tag good">في المتناول</span>' : '<span class="tag mid">خارج المتناول</span>';
+    var d = G.deals[owner] || {};
+    if (d.ally) tags += '<span class="tag good">حليف (يتبقى ' + dLeft(d.ally) + ' يوماً)</span>';
+    if (d.trade) tags += '<span class="tag good">شريك تجاري</span>';
+    if (d.tribute) tags += '<span class="tag warn">تدفع الجزية (يتبقى ' + dLeft(d.tribute) + ' يوماً)</span>';
+  }
+  var emp = play ? terrOf(owner) : [sel], agg = play && (emp.length > 1 || owner === G.player), ag0 = agg ? aggOf(owner) : null;
+  var S = { gdp: c.gdp, pop: c.pop, troops: c.troops, power: c.power, nuke: c.nuke, rk: true }, L = '';
+  if (agg) {
+    S = { gdp: 0, pop: 0, troops: ag0.troops, power: ag0.power, nuke: ag0.nuke, rk: false }; L = emp.length > 1 ? ' (المجموع)' : '';
+    emp.forEach(function (id) { S.gdp += countries[id].gdp; S.pop += countries[id].pop; });
+  }
+  var note = emp.length > 1 ? '<p class="muted">الأرقام مجمَّعة لكل أراضي ' + esc(on(owner)) + ' (' + emp.length + ' أراضٍ).</p>' : '';
+  el.innerHTML =
+    '<div class="head"><h2>' + esc(c.name) + '</h2><div class="tags">' + tags + '</div>' + note + '</div>' +
+    '<section><h3>الاقتصاد</h3><dl>' +
+      kv('الناتج المحلي' + L, fmtMoney(S.gdp), S.rk ? 'المرتبة ' + ranks.gdp[sel] + ' من ' + order.length : '') +
+      (play ? kv('موارد ' + (owner === G.player ? 'دولتك' : 'المسيطر'), fmtN(G.R[owner])) : '') +
+      (play ? kv('دخل الأرض', fmtD(terrInc(sel)) + ' مورد/يوم') : '') +
+    '</dl></section>' +
+    '<section><h3>السكان</h3><dl>' + kv('عدد السكان' + L, fmtPop(S.pop), S.rk ? 'المرتبة ' + ranks.pop[sel] : '') + '</dl></section>' +
+    '<section><h3>القوة العسكرية</h3><dl>' +
+      kv('الجنود' + L, fmtTroops(S.troops), S.rk ? 'المرتبة ' + ranks.troops[sel] : '') +
+      kv('مؤشر القوة', bar(S.power, 100) + ' <small>' + S.power + '/100</small>') +
+      kv('العلاقات الخارجية', bar(dipOf(owner) * 100, 100) + ' <small>' + Math.round(dipOf(owner) * 100) + '%</small>') +
+      (play ? kv('الحلفاء', allyCount(owner)) : '') +
+      kv('أسلحة نووية', S.nuke ? 'نعم' : 'لا') +
+      (navalOf(owner) > 0 ? kv('القوة البحرية', bar(Math.min(100, navalOf(owner)), 100) + ' <small>' + fmtD(navalOf(owner)) + ' (م ' + navalLv(owner) + ')</small>') : kv('القوة البحرية', 'دولة غير ساحلية')) +
+      (play ? kv('شركاء التجارة', tradeCount(owner)) : '') +
+      (play && Object.keys(G.zown).some(function (i) { return G.zown[i] === owner; }) ? kv('مناطق بحرية', Object.keys(G.zown).filter(function (i) { return G.zown[i] === owner; }).length + ' (+' + fmtD(zoneInc(owner)) + ' مورد/يوم)') : '') +
+      (owner !== G.player ? kv('النهج الاستراتيجي', STRAT_T[stratOf(owner)]) : '') +
+    '</dl></section>' +
+    devSection() +
+    ((play && owner !== sel) ? '<p class="muted">الخطوط على الخريطة تخصّ ' + esc(on(owner)) + ' التي تحكم هذه الأرض.</p>' : '');
+}
+
+var lastResult = '', confirmEnd = null;
+function devSection() {
+  if (G.mode !== 'scratch' || !sel) return '';
+  var ow = G.owner[sel], tl = terrOf(ow), s = 0; tl.forEach(function (id) { s += G.dev[id] || 0; });
+  var avg = tl.length ? s / tl.length : 0, ml = tl.length > 1 ? 'متوسط ' : '';
+  return '<section><h3>التطوير والدفاع</h3><dl>' +
+    kv('مستوى الجيش', bar(armyLv(ow), AI_ARMY_MAX) + ' <small>' + armyLv(ow) + '</small>') +
+    kv('مستوى الحماية', bar(protLv(ow), PROT_MAX) + ' <small>' + protLv(ow) + '/' + (ow === G.player ? PROT_MAX : AI_PROT_MAX) + '</small>') +
+    kv('البنية التحتية', bar(avg, 5) + ' <small>' + ml + fmtD(avg) + '/5</small>') +
+    kv('قوة الدفاع الفعلية', fmtN(defRes(sel, null))) + '</dl></section>';
+}
+function renderAct() {
+  var el = $('act');
+  if (selZone != null && ZN[selZone]) { zoneAct(); return; }
+  if (!sel) { el.innerHTML = ''; return; }
+  var c = countries[sel], res = lastResult ? '<p class="result">' + lastResult + '</p>' : '';
+  if (G.phase === 'select') {
+    el.innerHTML = '<button class="btn primary" id="claim">ابدأ بقيادة ' + esc(c.name) + '</button>';
+    $('claim').addEventListener('click', function () { startAs(sel); afterChange(); });
+    return;
+  }
+  if (isMine(sel)) {
+    var lv = G.dev[sel] || 0, cost = devCost(sel), sid = sel;
+    el.innerHTML = '<p class="muted">هذه الأرض تحت سيطرتك وتدرّ <b>' + fmtD(terrInc(sel)) + '</b> مورد في اليوم (مستوى التطوير ' + lv + '/5).</p>' +
+      (lv >= 5 ? '<p class="muted">بلغ التطوير أقصى مستوى.</p>' : '<button class="btn primary" id="dev" data-cost="' + cost + '">تطوير داخلي ← المستوى ' + (lv + 1) + ' (التكلفة ' + fmtN(cost) + ')</button>') + res;
+    var b = $('dev');
+    if (b) b.addEventListener('click', function () {
+      if (upBlock() || G.R[G.player] < cost) return;
+      G.R[G.player] -= cost; G.dev[sid] = lv + 1; upDone();
+      logPush('طوّرت ' + nm(sid) + ' إلى المستوى ' + (lv + 1) + '.', 'good'); lastResult = '';
+      afterChange();
+    });
+    return;
+  }
+  var e = G.owner[sel], d = G.deals[e] || {}, r = rel(G.player, e), l = relLabel(r);
+  var h = '<div class="kv"><dt>علاقتك بـ' + esc(nm(e)) + '</dt><dd class="rl ' + l.k + '">' + l.t + ' <span>' + r + '</span></dd></div>' +
+    (G.rej && G.rej[e] != null && G.day - G.rej[e] < 365 ? '<p class="muted">رفضتَ عرض تحالفها، فلن تقترح عليك تحالفاً قبل ' + (365 - (G.day - G.rej[e])) + ' يوماً.</p>' : '') +
+    (d.ally && confirmEnd === e + ':ally' ? '<p class="result">تنبيه: إنهاء التحالف قبل انتهاء مدته (يتبقى ' + dLeft(d.ally) + ' يوماً) يكلّفك نصف مواردك الحالية (' + fmtN(G.R[G.player] * 0.5) + '). اضغط «تأكيد الإنهاء» للمتابعة.</p>' : '') +
+    '<div class="btns">' +
+    '<button class="btn' + (confirmEnd === e + ':ally' ? ' primary' : '') + '" data-d="ally"' + (d.tribute ? ' disabled' : '') + '>' + (d.ally ? (confirmEnd === e + ':ally' ? 'تأكيد الإنهاء (خسارة نصف الموارد)' : 'إنهاء التحالف قبل موعده') : 'اقتراح تحالف') + '</button>' +
+    '<button class="btn" data-d="trade">' + (d.trade ? 'إلغاء التجارة' : 'اتفاقية تجارة') + '</button>' +
+    '<button class="btn wide" data-d="tribute"' + (d.ally ? ' disabled' : '') + '>' + (d.tribute ? 'إلغاء اتفاقية الجزية' : 'عدم اعتداء مقابل جزية') + '</button></div>' +
+    '<p class="hint">التجارة ترفع دخلك، والتحالف يضاعفها ويقوّي دفاعك. الجزية تدرّ عليك دخلاً شرط أن تكون أقوى منهم، وتنتهي كل اتفاقية بعد عام، ومن يغزو شريكه يخسر نصف موارده، وإنهاء التحالف قبل موعده يكلّفك نصف مواردك أيضاً.</p>';
+  if (d.ally) h += '<p class="muted">يمكنك إنهاء التحالف قبل موعده (يتبقى ' + dLeft(d.ally) + ' يوماً) مقابل نصف مواردك الحالية.</p>';
+  if (d.ally || d.tribute) h += '<p class="result">⚠ بينك وبين هذه الدولة اتفاقية سارية (مدتها عام واحد). إن غزوتها خسرتَ نصف مواردك الحالية وانتهت الاتفاقية.</p>';
+  if (!reachable(sel)) h += '<p class="muted">لا يوجد حدّ برّي أو بحري يصلك بهذه الأرض بعد. استولِ على جار لها أولاً.</p>';
+  else {
+    var frac = parseInt(($('frac') && $('frac').value) || '60', 10);
+    var rq = reqCheck(sel);
+    h += '<div class="reqs"><div class="req ' + (rq.army > rq.tr * REQ_TROOPS ? 'ok' : 'no') + '"><span>الجيش (أنت / الهدف ×' + REQ_TROOPS + ')</span><b>' + fmtTroops(rq.army) + ' / ' + fmtTroops(rq.tr) + '</b></div>' +
+      '<div class="req ' + (rq.pow > rq.tp + REQ_POWER ? 'ok' : 'no') + '"><span>مؤشر القوة (أنت / الهدف +' + REQ_POWER + ')</span><b>' + rq.pow + ' / ' + rq.tp + '</b></div>' + (rq.tnuke ? '<div class="req ' + (rq.mynuke ? 'ok' : 'no') + '"><span>☢ الهدف نووي: يلزمك سلاح نووي</span><b>' + (rq.mynuke ? 'متوفّر' : 'غير متوفّر') + '</b></div>' : '') + '</div>' +
+      (rq.ok ? '' : '<p class="muted">' + (rq.tnuke && !rq.mynuke ? 'الهدف يمتلك سلاحاً نووياً، ولن تغزوه قبل أن تمتلك سلاحاً نووياً (يُمنح لك عند تجاوز مواردك ' + fmtN(NUKE_AT) + '). ' : '') + 'يجب أن يزيد جيشك على جيش الهدف بنسبة ' + Math.round((REQ_TROOPS - 1) * 100) + '% على الأقل، وأن يتفوّق مؤشر قوتك على مؤشره بـ' + REQ_POWER + ' نقطة على الأقل. وسّع أراضيك بغزو دول أضعف أولاً.</p>');
+    h += '<label class="slider" for="frac">الموارد المخصّصة للهجوم <output id="fracOut">' + frac + '%</output></label>' +
+      '<input type="range" id="frac" min="10" max="100" step="5" value="' + frac + '"><div class="odds" id="odds"></div>' +
+      '<button class="btn primary" id="invade"' + (rq.ok ? '' : ' disabled') + '>غزو ' + esc(c.name) + '</button>' +
+      '<p class="hint">كل غزو ناجح يخفض استقرارك ' + STAB_HIT + ' نقاط ويُغضب الدول الأخرى، وتبقى الأرض المحتلة بنصف دخلها ' + OCC_DAYS + ' يوماً. وكلما اتسعت أراضيك ازدادت الدول تكتّلاً ضدك.</p>';
+  }
+  el.innerHTML = h + res;
+  el.querySelectorAll('[data-d]').forEach(function (b) { b.addEventListener('click', function () { deal(b.getAttribute('data-d')); }); });
+  if ($('frac')) {
+    var upd = function () {
+      var f = parseInt($('frac').value, 10) / 100, amt = G.R[G.player] * f, a = atkStr(G.player, amt, sel), df = defRes(sel, G.player), o = oddsLabel(a / df);
+      $('fracOut').textContent = Math.round(f * 100) + '% (' + fmtN(amt) + ')';
+      $('odds').innerHTML = 'قوة الهجوم <b>' + fmtN(a) + '</b> مقابل الدفاع <b>' + fmtN(df) + '</b> <span class="tag ' + o.k + '">' + o.t + '</span>' +
+        (c.nuke ? '<div class="muted">دولة نووية: دفاعها مضاعف.</div>' : '') +
+        (landBorder(sel, G.player) ? '' : '<div class="muted">غزو بحري: قوة الهجوم أقل بنسبة 25%.</div>') +
+        (areaMult(terrOf(G.player), sel) > 1.02 ? '<div class="muted">الهدف أكبر منك مساحةً: تكلفة الغزو ×' + areaMult(terrOf(G.player), sel).toFixed(2) + '.</div>' : '<div class="muted">الهدف ليس أكبر منك مساحةً: لا زيادة في التكلفة.</div>');
+    };
+    $('frac').addEventListener('input', upd); upd();
+    $('invade').addEventListener('click', function () {
+      var amt = G.R[G.player] * parseInt($('frac').value, 10) / 100;
+      if (amt < 1) { lastResult = 'لا تملك موارد كافية للهجوم.'; afterChange(); return; }
+      var po = G.owner[sel], pd = G.deals[po];
+      if (pd && (pd.ally || pd.tribute)) {
+        var lost = G.R[G.player] * 0.5; G.R[G.player] -= lost; amt *= 0.5; delete G.deals[po]; bump(G.player, po, -30);
+        logPush('نقضتَ اتفاقيتك مع ' + on(po) + ' فخسرتَ نصف مواردك (' + fmtN(lost) + ').', 'bad');
+      }
+      var tid = sel; G.hold = true; $('invade').disabled = true;
+      fxRun(nearestOwned(tid, G.player), tid, function () {
+        var out = conquer(G.player, tid, amt);
+        lastResult = ''; renderAll(); showBattle(out);
+      });
+    });
+  }
+}
+
+function renderEco() {
+  var el = $('eco');
+  if (G.phase !== 'play') { el.innerHTML = ''; return; }
+  el.innerHTML = '<h3>الاقتصاد والضرائب</h3><dl>' +
+    kv('التنمية المحلية', '<span id="bDom"></span>') + kv('الضرائب', '<span id="bTax"></span>') +
+    kv('التجارة', '<span id="bTrade"></span>') + kv('الجزية المستلمة', '<span id="bTribute"></span>') + kv('المناطق البحرية', '<span id="bSea"></span>') +
+    kv('الاستقرار الداخلي', '<span id="bStab"></span>') + '</dl>' +
+    '<div class="taxes">' + TAXN.map(function (t, i) { return '<button class="btn' + (G.tax === i ? ' on' : '') + '" data-tax="' + i + '">' + t + '</button>'; }).join('') + '</div>' +
+    '<p class="hint">الضرائب المرتفعة تزيد دخلك لكنها تُنهك الاستقرار، وانخفاض الاستقرار يقلّص كل الإيرادات.</p>' + protHtml() + navyHtml();
+  el.querySelectorAll('[data-tax]').forEach(function (b) { b.addEventListener('click', function () { G.tax = parseInt(b.getAttribute('data-tax'), 10); renderEco(); updateHud(); }); });
+}
+
+function updateHud() {
+  if (!G || G.phase !== 'play') return;
+  var i = income(), set = function (id, v) { var e = $(id); if (e) e.textContent = v; };
+  set('hRes', fmtN(G.R[G.player])); set('hRate', '+' + fmtD(i.total) + ' / يوم');
+  var t; try { t = new Date(Date.UTC(2026, 9, 14) + G.day * 864e5).toLocaleDateString('ar-u-nu-latn', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }); } catch (e) { t = 'اليوم ' + G.day; }
+  var pg = aggOf(G.player);
+  set('hArmy', fmtTroops(G.army)); set('hPow', pg.power); set('hNuke', pg.nuke ? '☢ متوفّر' : Math.min(99, Math.floor(G.R[G.player] / NUKE_AT * 100)) + '%');
+  if (updateHud.last != null && G.army > updateHud.last + 0.01) { var st = $('hArmy').parentNode; st.classList.add('flash'); setTimeout(function () { st.classList.remove('flash'); }, 900); }
+  updateHud.last = G.army;
+  set('hDate', t); set('hTerr', terrOf(G.player).length + ' / ' + order.length);
+  set('bDom', fmtD(i.dom)); set('bTax', (i.tax >= 0 ? '+' : '') + fmtD(i.tax)); set('bTrade', '+' + fmtD(i.trade)); set('bTribute', '+' + fmtD(i.tribute)); set('bSea', '+' + fmtD(i.sea)); set('bStab', Math.round(G.stab) + '%');
+  document.querySelectorAll('#spd button').forEach(function (b) { b.classList.toggle('on', parseInt(b.getAttribute('data-s'), 10) === G.speed); });
+  document.querySelectorAll('[data-cost]').forEach(function (b) { b.disabled = G.R[G.player] < parseFloat(b.getAttribute('data-cost')); });
+}
+function renderHud() {
+  var play = G.phase === 'play';
+  $('hud').hidden = !play; $('pick').hidden = play; $('save').disabled = !play; $('evBtn').disabled = !play;
+  updateHud();
+}
+
+var evOpen = false, evPrev = 1, evFilter = 'all';
+function kindOf(l) {
+  if (/^[✔✖]/.test(l.text)) return 'react';
+  if (l.tone === 'war' || l.tone === 'alert' || /استول|غزو|هجومك/.test(l.text)) return 'war';
+  if (/تحالف|الجزية|تجارة/.test(l.text)) return 'dip';
+  return 'other';
+}
+function renderLog() {
+  var rows = G.log.filter(function (l) { return evFilter === 'all' || kindOf(l) === evFilter; });
+  $('log').innerHTML = rows.length ? rows.map(function (l) { return '<li class="t-' + l.tone + '"><span>يوم ' + l.day + '</span>' + esc(l.text) + '</li>'; }).join('') : '<li class="muted">' + (G.log.length ? 'لا أحداث في هذا القسم.' : 'لا أحداث بعد.') + '</li>';
+  document.querySelectorAll('#evFilter [data-f]').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-f') === evFilter); });
+}
+function openEvents() {
+  if (evOpen || !G || G.phase !== 'play') return;
+  evOpen = true; evPrev = G.speed; G.speed = 0; seenCount = logCount; updateEvBadge();
+  renderLog(); $('events').hidden = false; updateHud(); $('evClose').focus();
+}
+function closeEvents() {
+  if (!evOpen) return;
+  evOpen = false; $('events').hidden = true;
+  if (G && G.phase === 'play' && G.speed === 0) G.speed = evPrev;
+  updateHud(); $('evBtn').focus();
+}
+
+function renderWin() {
+  var w = $('win');
+  if (!G.won && !G.lost) { w.hidden = true; return; }
+  w.hidden = false;
+  w.innerHTML = G.won
+    ? '<div><h2>العالم كله لك</h2><p>سيطرت ' + esc(nm(G.player)) + ' على ' + order.length + ' أرضاً خلال ' + G.day + ' يوماً.</p><button class="btn primary" id="again">العب مجدداً</button></div>'
+    : '<div><h2>سقطت دولتك</h2><p>خسرت ' + esc(nm(G.player)) + ' كل أراضيها بعد ' + G.day + ' يوماً.</p><button class="btn primary" id="again">العب مجدداً</button></div>';
+  $('again').addEventListener('click', restart);
+}
+
+function renderAll() {
+  G.dirty = false;
+  renderHud(); renderOffers(); renderCard(); renderAct(); renderEco(); renderLog(); renderWin(); refreshColors(); drawRel();
+  updateHud();
+  document.body.setAttribute('data-phase', G.phase);
+}
+function afterChange() { renderAll(); }
+function select(id, fromList) {
+  sel = id; selZone = null; lastResult = ''; confirmEnd = null; renderAll();
+  if (fromList) { var row = document.querySelector('.row.on'); if (row) row.scrollIntoView({ block: 'nearest' }); }
+}
+function renderOffers() {
+  var el = $('offers');
+  if (G.phase !== 'play' || !G.offers.length) { el.innerHTML = ''; return; }
+  el.innerHTML = '<h3>عروض التحالف</h3>' + G.offers.map(function (o, i) {
+    return '<div class="offer"><span><b>' + esc(on(o.from)) + '</b> تقترح عليك تحالفاً <small class="muted">(علاقتها بك ' + rel(G.player, o.from) + ')</small></span><span class="oa"><button class="btn" data-o="1" data-i="' + i + '">قبول</button><button class="btn" data-o="0" data-i="' + i + '" title="الرفض يمنع هذه الدولة من تجديد العرض لمدة عام">رفض</button></span></div>';
+  }).join('');
+  el.querySelectorAll('[data-i]').forEach(function (b) { b.addEventListener('click', function () { answerOffer(parseInt(b.getAttribute('data-i'), 10), b.getAttribute('data-o') === '1'); }); });
+}
+function nearestOwned(id, e) {
+  var t = countries[id], best = null, bd = 1e18;
+  neighborsOf(id).forEach(function (n) { if (G.owner[n] !== e) return; var d = Math.hypot(countries[n].cx - t.cx, countries[n].cy - t.cy); if (d < bd) { bd = d; best = n; } });
+  return best || (countries[e] ? e : id);
+}
+var fxPending = [], NSS = 'http://www.w3.org/2000/svg';
+function fxOK() { return !!($('fx') && view && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)); }
+function fxColor(e) { return e === G.player ? '#2dbfa6' : 'hsl(' + Math.floor(hash01('h' + e) * 360) + ' 75% 58%)'; }
+function fxNode(tag, attrs, life) {
+  var el = document.createElementNS(NSS, tag);
+  Object.keys(attrs || {}).forEach(function (k) { el.setAttribute(k, attrs[k]); });
+  $('fx').appendChild(el);
+  if (life) setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, life);
+  return el;
+}
+function fxRings(x, y, color, n, size) {
+  if (!fxOK()) return;
+  var s = view.w / 340;
+  for (var i = 0; i < n; i++) {
+    var c = fxNode('circle', { cx: x, cy: y, r: s * size, 'class': 'fxring', stroke: color, 'stroke-width': s * 1.6 }, 1700 + i * 300);
+    c.style.animationDelay = (i * 0.3) + 's';
+  }
+}
+function fxFlush() { var q = fxPending; fxPending = []; q.forEach(function (f) { try { f(); } catch (e) {} }); }
+function capOf(e) { return G.owner[e] === e ? e : (terrOf(e)[0] || e); }
+/* غزو ناجح: وميض بلون المحتل فوق الأرض + موجات + علم */
+function fxConquer(id, att) {
+  if (!fxOK() || !pathEls[id]) return;
+  var col = fxColor(att), s = view.w / 340, c = countries[id];
+  fxNode('path', { d: pathEls[id].getAttribute('d'), 'class': 'fxflash', fill: col }, 1900);
+  fxRings(c.cx, c.cy, col, 3, 16);
+  var t = fxNode('text', { x: c.cx, y: c.cy, 'class': 'fxico', 'font-size': s * 12 }, 2300); t.textContent = '🚩';
+}
+/* تحالف: قوس مضيء يُرسم بين الدولتين ثم مصافحة */
+function fxAlliance(a, b) {
+  if (!fxOK()) return;
+  var A = countries[capOf(a)], B = countries[capOf(b)]; if (!A || !B) return;
+  var s = view.w / 340, col = '#4cc38a', mx = (A.cx + B.cx) / 2, my = (A.cy + B.cy) / 2 - Math.hypot(B.cx - A.cx, B.cy - A.cy) * 0.22;
+  fxNode('path', { d: 'M' + A.cx + ',' + A.cy + ' Q' + mx + ',' + my + ' ' + B.cx + ',' + B.cy, pathLength: 1, 'class': 'fxarc', stroke: col, 'stroke-width': s * 1.8 }, 2500);
+  fxRings(A.cx, A.cy, col, 2, 9); fxRings(B.cx, B.cy, col, 2, 9);
+  var t = fxNode('text', { x: 0.25 * A.cx + 0.5 * mx + 0.25 * B.cx, y: 0.25 * A.cy + 0.5 * my + 0.25 * B.cy, 'class': 'fxico', 'font-size': s * 13 }, 2400); t.textContent = '🤝';
+}
+/* الاستيلاء على منطقة بحرية: موجات بلون المستولي ونبضة في العلامة */
+function fxZone(i, e) {
+  var z = ZN[i]; if (!z || !fxOK()) return;
+  fxRings(z.x, z.y, fxColor(e), 3, 14);
+  var el = zEls[i], zi = el && el.querySelector('.zi');
+  if (zi) { zi.classList.add('cap'); setTimeout(function () { zi.classList.remove('cap'); }, 900); }
+}
+/* خطوط العلاقات: خضراء نحو الحلفاء وحمراء نحو الأعداء للدولة المحددة */
+var relKey = '', relEls = [];
+function relLists(subj) {
+  var al = [], en = [];
+  order.forEach(function (z) {
+    if (z === subj || G.owner[z] !== z) return;
+    var sc = rel(subj, z);
+    if (isAllied(subj, z) || sc >= 75) al.push(z); else if (sc < 25) en.push(z);
+  });
+  return { al: al, en: en };
+}
+function relScale() {
+  if (!view) return;
+  var w = view.w / 340 * 0.85;
+  relEls.forEach(function (o) { if (o.line) o.line.setAttribute('stroke-width', w); if (o.dot) o.dot.setAttribute('r', w * 1.9); });
+}
+function drawRel() {
+  var g = $('rel'); if (!g || !view) return;
+  var subj = (G.phase !== 'play' && G.phase !== 'select') || sel == null || selZone != null ? null : (G.phase === 'play' ? G.owner[sel] : sel);
+  var L = subj ? relLists(subj) : { al: [], en: [] };
+  var key = subj ? subj + '|' + L.al.join(',') + '|' + L.en.join(',') : '';
+  if (key === relKey) { relScale(); g.style.display = showRel ? '' : 'none'; return; }
+  relKey = key; relEls = [];
+  g.style.display = showRel ? '' : 'none';
+  while (g.firstChild) g.removeChild(g.firstChild);
+  if (!subj) return;
+  var A = countries[capOf(subj)]; if (!A) return;
+  function add(list, col) {
+    list.forEach(function (o) {
+      var B = countries[capOf(o)]; if (!B) return;
+      var mx = (A.cx + B.cx) / 2, my = (A.cy + B.cy) / 2 - Math.hypot(B.cx - A.cx, B.cy - A.cy) * 0.18;
+      var ln = document.createElementNS(NSV, 'path');
+      ln.setAttribute('d', 'M' + A.cx + ',' + A.cy + ' Q' + mx + ',' + my + ' ' + B.cx + ',' + B.cy);
+      ln.setAttribute('pathLength', 1); ln.setAttribute('stroke', col); ln.setAttribute('stroke-opacity', 0.85);
+      var dt = document.createElementNS(NSV, 'circle'); dt.setAttribute('cx', B.cx); dt.setAttribute('cy', B.cy); dt.setAttribute('fill', col);
+      g.appendChild(ln); g.appendChild(dt); relEls.push({ line: ln, dot: dt });
+    });
+  }
+  add(L.en, '#e5484d'); add(L.al, '#3ecf8e');
+  var src = document.createElementNS(NSV, 'circle'); src.setAttribute('cx', A.cx); src.setAttribute('cy', A.cy); src.setAttribute('fill', '#fff'); src.setAttribute('stroke', '#1b2a33');
+  g.appendChild(src); relEls.push({ dot: src });
+  relScale();
+}
+function fxRun(from, to, done) {
+  var fxG = $('fx');
+  if (!fxG || !view || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) { done(); return; }
+  var NS = 'http://www.w3.org/2000/svg', A = countries[from], B = countries[to], s = view.w / 340, N = 6, dur = 900, gap = 110, t0 = performance.now(), fin = 0, ms = [];
+  var mx = (A.cx + B.cx) / 2, my = (A.cy + B.cy) / 2 - Math.hypot(B.cx - A.cx, B.cy - A.cy) * 0.3;
+  function mk(tag, attrs) { var el = document.createElementNS(NS, tag); Object.keys(attrs).forEach(function (k) { el.setAttribute(k, attrs[k]); }); return el; }
+  function burst(x, y, r) {
+    var c = mk('circle', { cx: x, cy: y, r: r, 'class': 'boom' }); fxG.appendChild(c);
+    setTimeout(function () { if (c.parentNode) c.parentNode.removeChild(c); }, 700);
+  }
+  function bez(t) { var u = 1 - t; return { x: u * u * A.cx + 2 * u * t * mx + t * t * B.cx, y: u * u * A.cy + 2 * u * t * my + t * t * B.cy }; }
+  for (var i = 0; i < N; i++) {
+    var g = mk('g', { visibility: 'hidden' });
+    g.appendChild(mk('line', { x1: 0, y1: 2, x2: 0, y2: 12, stroke: '#ffb347', 'stroke-width': 1.6, 'stroke-linecap': 'round', opacity: 0.7 }));
+    g.appendChild(mk('polygon', { points: '0,-4 2,3 -2,3', fill: '#ff4d2e', stroke: '#fff', 'stroke-width': 0.6 }));
+    fxG.appendChild(g); ms.push(g);
+  }
+  burst(A.cx, A.cy, s * 6);
+  pathEls[to].classList.add('hit');
+  function step(now) {
+    var alive = false;
+    ms.forEach(function (g, i) {
+      if (g._d) return;
+      var t = (now - t0 - i * gap) / dur; alive = true;
+      if (t < 0) return;
+      if (t >= 1) {
+        g._d = 1; if (g.parentNode) g.parentNode.removeChild(g);
+        burst(B.cx + (Math.random() - 0.5) * s * 8, B.cy + (Math.random() - 0.5) * s * 8, s * (i === N - 1 ? 11 : 6));
+        if (++fin === N) setTimeout(done, 650);
+        return;
+      }
+      var p = bez(t), q = bez(Math.min(1, t + 0.02));
+      g.setAttribute('visibility', 'visible');
+      if (Math.random() < 0.6) { var sm = mk('circle', { cx: p.x, cy: p.y, r: s * 2.2, 'class': 'smk' }); fxG.insertBefore(sm, fxG.firstChild); setTimeout(function () { if (sm.parentNode) sm.parentNode.removeChild(sm); }, 600); }
+      g.setAttribute('transform', 'translate(' + p.x + ',' + p.y + ') rotate(' + (Math.atan2(q.y - p.y, q.x - p.x) * 180 / Math.PI + 90) + ') scale(' + s + ')');
+    });
+    if (alive) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+function showBattle(o) {
+  var b = $('battle'), net = o.gain - o.cas;
+  b.innerHTML = '<div class="bcard ' + (o.win ? 'win' : 'lose') + '" role="dialog" aria-modal="true"><h2>' + (o.win ? 'نجح الغزو!' : 'فشل الغزو') + '</h2><p>' + esc(o.name) + '</p><dl>' +
+    kv('الموارد المخصّصة', fmtN(o.amt)) + kv('الموارد المفقودة', fmtN(o.loss)) + kv('الجنود الذين خسرتهم', fmtTroops(o.cas)) +
+    (o.win ? kv('جنود انضمّوا من الأرض المحتلة', '+' + fmtTroops(o.gain)) + kv('صافي تغيّر الجيش', (net >= 0 ? '+' : '−') + fmtTroops(Math.abs(net))) : '') +
+    kv('جيشك الآن', fmtTroops(G.army)) + '</dl><button class="btn primary" id="bok">متابعة</button></div>';
+  b.hidden = false; G.hold = true; $('bok').focus();
+  $('bok').addEventListener('click', function () { b.hidden = true; G.hold = false; renderAll(); fxFlush(); });
+}
+function restart() {
+  relKey = ''; var rg = $('rel'); while (rg && rg.firstChild) rg.removeChild(rg.firstChild);
+  fxPending = []; var fxg = $('fx'); while (fxg && fxg.firstChild) fxg.removeChild(fxg.firstChild);
+  $('battle').hidden = true; evOpen = false; $('events').hidden = true; logCount = seenCount = 0; updateEvBadge(); $('toasts').innerHTML = ''; updateHud.last = null; newGame(); sel = null; lastResult = ''; fit(); renderAll(); }
+
+var SAVE_KEY = 'iron_meridian_save_v1', armed = false;
+function saveGame() {
+  if (!G || G.phase !== 'play') return;
+  if (G.mode === 'scratch') { G.tr = {}; order.forEach(function (id) { G.tr[id] = countries[id].troops; }); }
+  try { localStorage.setItem(SAVE_KEY, JSON.stringify({ G: G, mod: mod })); toast('تم حفظ تقدمك.', 'good'); } catch (e) { toast('تعذّر الحفظ في هذا المتصفح.', 'bad'); }
+}
+function loadGame() {
+  try {
+    var raw = localStorage.getItem(SAVE_KEY); if (!raw) return false;
+    var d = JSON.parse(raw); if (!d || !d.G || d.G.phase !== 'play' || d.G.won || d.G.lost || !d.G.owner || !countries[d.G.player]) return false;
+    newGame(); Object.keys(d.G).forEach(function (k) { G[k] = d.G[k]; });
+    mod = d.mod || {}; G.hold = false; G.up = G.up || {}; G.mem = G.mem || {}; G.focus = G.focus || {}; G.zown = G.zown || {}; G.zl = G.zl || {}; G.rej = G.rej || {}; G.nb = G.nb || {}; G.tnet = G.tnet || {}; G.navy = G.navy || 0; G.zseed = G.zseed || 1; applyMode(G.mode || 'classic'); initZones();
+    if (G.mode === 'scratch' && G.tr) order.forEach(function (id) { if (G.tr[id] != null) countries[id].troops = G.tr[id]; });
+    order.forEach(function (id) { var c = countries[id]; c.name = G.owner[id] === id ? c.orig : on(G.owner[id]) + ' (' + c.orig + ')'; });
+    refreshPower(); return true;
+  } catch (e) { return false; }
+}
+$('save').addEventListener('click', saveGame);
+$('evBtn').addEventListener('click', openEvents);
+$('evClose').addEventListener('click', closeEvents);
+$('events').addEventListener('click', function (e) { if (e.target === this) closeEvents(); });
+document.querySelectorAll('#evFilter [data-f]').forEach(function (b) { b.addEventListener('click', function () { evFilter = b.getAttribute('data-f'); renderLog(); }); });
+$('reset').addEventListener('click', function () {
+  var b = $('reset');
+  if (!armed) { armed = true; b.textContent = 'تأكيد؟ سيُحذف الحفظ'; setTimeout(function () { armed = false; b.textContent = 'إعادة اللعب'; }, 3500); return; }
+  armed = false; b.textContent = 'إعادة اللعب';
+  try { localStorage.removeItem(SAVE_KEY); } catch (e) {}
+  restart();
+});
+document.querySelectorAll('#spd button').forEach(function (b) { b.addEventListener('click', function () { G.speed = parseInt(b.getAttribute('data-s'), 10); updateHud(); }); });
+document.addEventListener('keydown', function (e) {
+  if (evOpen) { if (e.key === 'Escape') closeEvents(); return; }
+  if (e.code === 'Space' && G && G.phase === 'play' && !/INPUT|SELECT|TEXTAREA|BUTTON/.test(e.target.tagName)) { e.preventDefault(); G.speed = G.speed ? 0 : 1; updateHud(); }
+});
+
+/* ---------- الزمن الحقيقي: كل 100 مللي ثانية يمرّ جزء من اليوم ---------- */
+setInterval(function () {
+  if (!G || G.phase !== 'play' || !G.speed || G.hold || G.won || G.lost) return;
+  var step = 0.1 * G.speed / 3; /* يوم واحد = 3 ثوانٍ عند السرعة ×1 */
+  G.R[G.player] += income().total * step;
+  if (!G.nuke && G.R[G.player] > NUKE_AT) { G.nuke = true; logPush('☢ تجاوزت مواردك ' + fmtN(NUKE_AT) + ': امتلكتَ أسلحة نووية ويمكنك الآن غزو الدول النووية.', 'good'); }
+  G.frac += step;
+  while (G.frac >= 1) { G.frac -= 1; dayTick(); }
+  if (G.dirty) renderAll(); else updateHud();
+}, 100);
+
+/* ---------- الأنماط والقائمة والشرح والحماية ---------- */
+var EQ = { gdp: 500, pop: 20, troops: 100, nuke: false, tech: 6 };
+function applyMode(m) {
+  order.forEach(function (id) {
+    var c = countries[id]; c.o = c.o || { gdp: c.gdp, pop: c.pop, troops: c.troops, nuke: c.nuke, tech: c.tech };
+    var v = m === 'scratch' ? EQ : c.o; c.gdp = v.gdp; c.pop = v.pop; c.troops = v.troops; c.nuke = v.nuke; c.tech = v.tech;
+    if (m === 'scratch' && G.phase === 'select') G.R[id] = 20;
+  });
+  computeRanks(); refreshPower(); assignStrat(m);
+}
+var PROT_MAX = 15, ARMY_BASE = 30, ARMY_COST_K = 1.5, ARMY_GROW = 1.2;
+function upWait() { return Math.max(0, (G.upCd || 0) - G.day); }
+function upBlock() { var w = upWait(); if (w > 0) { toast('تحتاج القيادة إلى ' + w + ' أيام قبل الترقية التالية.', 'bad'); return true; } return false; }
+function upDone() { G.upCd = G.day + HARD.cd; }
+function protCost() { return Math.round(HARD.cost * 25 * Math.pow(1.7, G.prot || 0)); }
+function armyCost() { return Math.round(HARD.cost * ARMY_BASE * Math.pow(ARMY_COST_K, G.armyLv || 0)); }
+function protHtml() {
+  if (G.mode !== 'scratch') return '';
+  var lv = G.prot || 0, al = G.armyLv || 0;
+  return '<div class="prot"><h3>الحماية من الاحتلال</h3><p class="hint">المستوى ' + lv + '/' + PROT_MAX + ' — يرفع دفاع كل أراضيك بنسبة ' + (lv * 40) + '%.</p>' +
+    (lv >= PROT_MAX ? '<p class="muted">بلغت الحماية أقصى مستوى.</p>' : '<button class="btn primary" data-prot="1" data-cost="' + protCost() + '">ترقية الحماية ← المستوى ' + (lv + 1) + ' (التكلفة ' + fmtN(protCost()) + ')</button>') + '</div>' +
+    '<div class="prot"><h3>ترقية الجيش</h3><p class="hint">المستوى ' + al + ' — كل ترقية تضرب حجم جيشك في ' + ARMY_GROW + ' (جيشك الآن ' + fmtTroops(G.army) + '). تتضاعف التكلفة ×' + ARMY_COST_K + ' في كل مرة، ويفصل بين أي ترقيتين ' + HARD.cd + ' أيام.</p>' +
+    '<button class="btn primary" data-army="1" data-cost="' + armyCost() + '">ترقية الجيش ← المستوى ' + (al + 1) + ' (التكلفة ' + fmtN(armyCost()) + ')</button></div>';
+}
+$('eco').addEventListener('click', function (e) {
+  if (!e.target.closest || G.mode !== 'scratch' || G.phase !== 'play') return;
+  if (e.target.closest('[data-prot]')) {
+    if ((G.prot || 0) >= PROT_MAX || upBlock() || G.R[G.player] < protCost()) return;
+    G.R[G.player] -= protCost(); G.prot = (G.prot || 0) + 1; upDone(); logPush('رقّيت الحماية إلى المستوى ' + G.prot + '.', 'good'); afterChange();
+  } else if (e.target.closest('[data-army]')) {
+    if (upBlock()) return;
+    if (G.R[G.player] < armyCost()) { toast('مواردك لا تكفي لترقية الجيش.', 'bad'); return; }
+    G.R[G.player] -= armyCost(); G.armyLv = (G.armyLv || 0) + 1; G.army *= ARMY_GROW; upDone();
+    logPush('رقّيت الجيش إلى المستوى ' + G.armyLv + ' فأصبح ' + fmtTroops(G.army) + '.', 'good'); afterChange();
+  }
+});
+$('eco').addEventListener('click', function (e) {
+  if (!e.target.closest || G.phase !== 'play' || !e.target.closest('[data-navy]')) return;
+  var cst = navyCost(G.player); if (navalOf(G.player) <= 0 || (G.navy || 0) >= NAVY_MAX) return;
+  if (upBlock()) return;
+  if (G.R[G.player] < cst) { toast('مواردك لا تكفي لترقية الأسطول.', 'bad'); return; }
+  G.R[G.player] -= cst; G.navy = (G.navy || 0) + 1; upDone(); logPush('رقّيت الأسطول إلى المستوى ' + G.navy + ' فأصبحت قوتك البحرية ' + fmtD(navalOf(G.player)) + '.', 'good'); afterChange();
+});
+var TUT = [
+  ['الهدف', 'سيطر على العالم كله بالاستيلاء على الدول واحدةً تلو الأخرى. تختار دولتك من الخريطة ثم يبدأ الزمن: كل يوم في اللعبة يمرّ كل 3 ثوانٍ، ويمكنك الإيقاف أو التسريع.'],
+  ['الموارد', 'الموارد هي عملة الغزو. تأتيك من تنمية أراضيك، والضرائب (المرتفعة تُنهك الاستقرار)، والتجارة، والجزية.'],
+  ['الغزو', 'تغزو الدول المجاورة لك براً أو بحراً. يلزم أن يزيد جيشك ومؤشر قوتك على جيش الهدف ومؤشره، وتخصّص نسبة من مواردك للهجوم. تُطلَق الصواريخ نحو الهدف، وتظهر لك شاشة النتيجة بالخسائر.'],
+  ['الدبلوماسية', 'يمكنك عقد تحالف أو اتفاقية تجارة أو «عدم اعتداء مقابل جزية». مدة التحالف والجزية عام واحد (365 يوماً) ثم تنتهي وتُجدَّد يدوياً. إن غزوتَ شريكاً بينكما اتفاقية سارية، أو أنهيتَ التحالف قبل موعده، خسرتَ نصف مواردك الحالية (يطلب منك الزر تأكيداً قبل الإنهاء). وإن رفضتَ عرض تحالف من دولة فلن تستطيع تجديده قبل مرور عام. وحين تضغط على دولة تظهر على الخريطة خطوط خضراء نحو حلفائها وحمراء نحو أعدائها.'],
+  ['السلاح النووي', 'عندما تتجاوز مواردك 200,000 تمتلك سلاحاً نووياً، وعندها فقط تستطيع غزو الدول النووية.'],
+  ['نمط «ابدأ من الصفر»', 'كل الدول متساوية تماماً عند البداية في الجيش والاقتصاد والعلاقات والدفاع، لكنها تتطور تلقائياً مع الوقت: ترقّي جيشها وحمايتها وبنيتها التحتية، وتظهر هذه المستويات في بطاقة كل دولة. ويتوفر لك خيار «الحماية» في لوحة الاقتصاد، وتُرقّيه حتى 15 مستوى ليحميك من الاحتلال، كما يمكنك «ترقية الجيش» لزيادة جنودك ×1.2 في كل مرة (والتكلفة ×1.5 بعد كل ترقية).'],
+  ['ذكاء الدول', 'لكل دولة نهج استراتيجي: توسّعية تبني إمبراطورية، ودفاعية تركّز على التحالفات والتحصينات، وتجارية تبني شبكة شركاء، وإقليمية تهيمن على محيطها، وقوة عظمى تمنع بروز منافس أكبر. وحين تكبر دولة كثيراً تتشكّل جبهة مضادة ضدها. والدول الأخرى تخطّط: تدّخر لهدف مجدٍ، وتنتقم ممن هاجمها، وتتحالف عند الشعور بالتهديد، وتركّز هجماتها على اللاعب كلما ضعف دفاعه أو اتّسعت أراضيه، وقد يشنّ حلفاؤها هجوماً منسّقاً. وتصلك إنذارات فور إطلاق أي هجوم على أراضيك، فرقِّ الحماية والجيش وحافظ على موارد احتياطية.'],
+  ['المناطق البحرية والمضائق', 'تظهر في البحار مناطق غنية بالموارد (علامة ⚓) لفترة محدودة وفي أماكن عشوائية تتغيّر في كل مرة. إن لم يستولِ عليها أحد اختفت بعد أيام، ومن يستولي عليها يستخرج مواردها حتى تنضب فتزول. للسيطرة على منطقة تحتاج دولة ساحلية إلى قوة بحرية كافية وإلى موارد، وتنقص قوتها البحرية 25% عن كل منطقة تحتفظ بها، فلا تستطيع دولة واحدة احتكار البحار. وبعد استيلاء دولة على منطقة لا يستطيع أحد انتزاعها منها لمدة 4 أيام. والقوة البحرية لا تزيد بغزو الدول، بل بترقية الأسطول من لوحة الاقتصاد فقط (تتضاعف تكلفة كل ترقية ×1.5). والدول المطلّة على مضائق (كمصر وتركيا وسنغافورة وبنما) تنال دخلاً إضافياً.'],
+  ['التجارة والمساحة', 'تنتهي اتفاقية التجارة تلقائياً إن تدهورت العلاقات دون 40%، وتظهر لك نافذة صغيرة بذلك. وغزو دولة أكبر من أراضيك مساحةً يرفع تكلفة الموارد بحسب فارق المساحة، أمّا غزو الأصغر منك فلا يرفعها.'],
+  ['نصائح', 'ابدأ بغزو الجيران الأضعف، طوّر أراضيك، احفظ تقدمك بزر «حفظ التقدم»، وراقب «الأحداث العالمية» لمعرفة ما تفعله الدول الأخرى.']
+];
+function showTut(i) {
+  var t = $('tut'); i = i || 0; t.hidden = false;
+  t.innerHTML = '<div class="tcard" role="dialog" aria-modal="true"><h2>' + TUT[i][0] + '</h2><p>' + TUT[i][1] + '</p><div class="tnav"><button class="btn" id="tp"' + (i ? '' : ' disabled') + '>السابق</button><span class="muted">' + (i + 1) + ' / ' + TUT.length + '</span><button class="btn primary" id="tn" style="width:auto">' + (i === TUT.length - 1 ? 'إنهاء' : 'التالي') + '</button></div></div>';
+  $('tp').addEventListener('click', function () { showTut(i - 1); });
+  $('tn').addEventListener('click', function () { if (i === TUT.length - 1) t.hidden = true; else showTut(i + 1); });
+}
+function showMenu() {
+  var has = false; try { has = !!localStorage.getItem(SAVE_KEY); } catch (e) {}
+  var m = $('menu'); m.hidden = false;
+  m.innerHTML = '<div class="mcard"><h1>الخط الحديدي</h1><p>لعبة الهيمنة على العالم</p>' +
+    (has ? '<button class="btn primary" id="mCont">متابعة اللعب المحفوظ</button>' : '') +
+    '<button class="btn" id="mClassic">كلاسيكي<small>العالم كما هو: دول متفاوتة القوة</small></button>' +
+    '<button class="btn" id="mScratch">ابدأ من الصفر<small>كل الدول متساوية وتتطور تلقائياً، مع ميزة الحماية</small></button>' +
+    '<button class="btn" id="mTut">شرح اللعبة</button></div>';
+  $('mClassic').addEventListener('click', function () { startMode('classic'); });
+  $('mScratch').addEventListener('click', function () { startMode('scratch'); });
+  $('mTut').addEventListener('click', function () { showTut(0); });
+  if (has) $('mCont').addEventListener('click', function () { if (loadGame()) { m.hidden = true; toast('تم تحميل تقدمك المحفوظ.', 'good'); renderAll(); } else toast('تعذّر تحميل الحفظ.', 'bad'); });
+}
+function startMode(m) { _restart(); G.mode = m; applyMode(m); initZones(); $('menu').hidden = true; renderAll(); }
+var _restart = restart; restart = function () { $('notice').hidden = true; noteLines = []; _restart(); showMenu(); };
+
+/* ---------- التشغيل ---------- */
+function boot() {
+  loadMapData(function (world) {
+    if (!world) {
+      $('status').innerHTML = '<div><h2>تعذّر تحميل الخريطة</h2><p>بيانات الحدود تُحمَّل من شبكة عامة ولم تستجب. تحقق من اتصالك ثم أعد المحاولة.</p><button class="btn primary" id="retry">إعادة المحاولة</button></div>';
+      $('retry').addEventListener('click', function () { $('status').innerHTML = '<div><p>جارٍ تحميل خريطة العالم…</p></div>'; boot(); });
+      return;
+    }
+    buildCountries(world);
+    arabize();
+    computeNeighbors();
+    computeRanks();
+    newGame();
+    buildMap(); prepLabels(); refreshLabels(true);
+    $('status').hidden = true;
+    renderAll(); showMenu();
+  });
+}
+boot();
+})();
+
+</script>
+
+</body></html>
